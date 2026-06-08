@@ -1,0 +1,2305 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Jason L. Albano — Senior AI-Enabled Healthcare Data Analyst with 18+ years of experience in healthcare analytics, Databricks, SQL, Power BI, Tableau, and AI-enabled automation at The Cigna Group." />
+  <meta name="keywords" content="Healthcare Data Analyst, Databricks, SQL, Power BI, Tableau, Healthcare Analytics, AI Analytics, Claims Analytics, Nashville, Cigna, Jason Albano" />
+  <meta name="author" content="Jason L. Albano" />
+  <meta name="robots" content="index, follow" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Jason L. Albano | Senior AI-Enabled Healthcare Data Analyst" />
+  <meta property="og:description" content="18+ years transforming complex healthcare data into actionable insights. Databricks, SQL, Power BI, Tableau, AI Analytics." />
+  <meta property="og:url" content="https://albano-portfolio.github.io" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Jason L. Albano | Senior AI-Enabled Healthcare Data Analyst" />
+  <meta name="twitter:description" content="18+ years transforming complex healthcare data into actionable insights." />
+  <title>Jason L. Albano | Senior AI-Enabled Healthcare Data Analyst</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <style>
+/* ================================================================
+   JASON L. ALBANO — Senior AI-Enabled Healthcare Data Analyst
+   style.css
+================================================================ */
+
+:root {
+  --bg-base:        #060C18;
+  --bg-surface:     #0A1422;
+  --bg-elevated:    #0F1C30;
+
+  --cyan:           #00D4FF;
+  --cyan-dim:       rgba(0, 212, 255, 0.12);
+  --cyan-glow:      rgba(0, 212, 255, 0.30);
+  --amber:          #F5A623;
+  --amber-dim:      rgba(245, 166, 35, 0.13);
+  --teal:           #00B8A0;
+  --teal-dim:       rgba(0, 184, 160, 0.12);
+  --purple:         #9B5DE5;
+  --purple-dim:     rgba(155, 93, 229, 0.12);
+  --green:          #00E676;
+
+  --text-primary:   #E8EDF5;
+  --text-secondary: #6E82A0;
+  --text-dim:       #3E5068;
+
+  --border:         rgba(255,255,255,0.06);
+  --border-hover:   rgba(0,212,255,0.22);
+  --glass-bg:       rgba(10, 20, 34, 0.72);
+  --glass-border:   rgba(255,255,255,0.07);
+
+  --font-display:   'Syne', sans-serif;
+  --font-body:      'DM Sans', sans-serif;
+  --font-mono:      'JetBrains Mono', monospace;
+
+  --section-pad:    6rem;
+  --container-max:  1200px;
+  --radius-sm:      6px;
+  --radius-md:      12px;
+  --radius-lg:      20px;
+  --radius-xl:      32px;
+  --transition:     all 0.3s cubic-bezier(0.4,0,0.2,1);
+}
+
+[data-theme="light"] {
+  --bg-base:       #EEF3FA;
+  --bg-surface:    #FFFFFF;
+  --bg-elevated:   #E4EBF5;
+  --glass-bg:      rgba(255,255,255,0.82);
+  --glass-border:  rgba(0,0,0,0.07);
+  --border:        rgba(0,0,0,0.07);
+  --border-hover:  rgba(0,120,180,0.28);
+  --text-primary:  #0A1422;
+  --text-secondary:#3A5572;
+  --text-dim:      #7A99B8;
+  --cyan:          #0085B8;
+  --cyan-dim:      rgba(0,133,184,0.10);
+  --cyan-glow:     rgba(0,133,184,0.22);
+  --amber:         #B86A00;
+  --amber-dim:     rgba(184,106,0,0.10);
+  --teal:          #006B5C;
+  --teal-dim:      rgba(0,107,92,0.10);
+  --purple:        #6030A8;
+  --purple-dim:    rgba(96,48,168,0.10);
+}
+
+/* ── Reset ───────────────────────────────────────────── */
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;font-size:16px}
+body{font-family:var(--font-body);background:var(--bg-base);color:var(--text-primary);line-height:1.7;-webkit-font-smoothing:antialiased;overflow-x:hidden;transition:background .4s,color .4s}
+img{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+ul{list-style:none}
+button{cursor:pointer;border:none;background:none;font-family:inherit}
+
+/* ── Accessibility ───────────────────────────────────── */
+.skip-link{position:absolute;top:-100px;left:1rem;background:var(--cyan);color:#000;padding:.5rem 1rem;border-radius:var(--radius-sm);font-weight:600;z-index:10000;transition:top .2s}
+.skip-link:focus{top:1rem}
+a:focus-visible,button:focus-visible,input:focus-visible,textarea:focus-visible{outline:2px solid var(--cyan);outline-offset:3px;border-radius:var(--radius-sm)}
+
+/* ================================================================
+   SPECIAL EFFECT: DATA STREAMS (matrix columns, healthcare data)
+================================================================ */
+.data-streams{
+  position:fixed;
+  inset:0;
+  pointer-events:none;
+  z-index:0;
+  overflow:hidden;
+  opacity:0.018;
+}
+.data-stream-col{
+  position:absolute;
+  top:-100%;
+  width:18px;
+  display:flex;
+  flex-direction:column;
+  gap:4px;
+  font-family:var(--font-mono);
+  font-size:9px;
+  color:var(--cyan);
+  animation:streamFall linear infinite;
+  white-space:nowrap;
+  user-select:none;
+}
+@keyframes streamFall{
+  0%{transform:translateY(-100%);opacity:1}
+  80%{opacity:0.6}
+  100%{transform:translateY(120vh);opacity:0}
+}
+
+/* ================================================================
+   SPECIAL EFFECT: FLOATING METRIC CHIPS
+================================================================ */
+.floating-metrics{
+  position:fixed;
+  inset:0;
+  pointer-events:none;
+  z-index:1;
+  overflow:hidden;
+}
+.float-chip{
+  position:absolute;
+  padding:4px 10px;
+  background:rgba(0,212,255,0.06);
+  border:1px solid rgba(0,212,255,0.15);
+  border-radius:100px;
+  font-family:var(--font-mono);
+  font-size:10px;
+  color:rgba(0,212,255,0.55);
+  animation:chipFloat linear infinite;
+  pointer-events:none;
+  white-space:nowrap;
+  backdrop-filter:blur(4px);
+}
+@keyframes chipFloat{
+  0%{transform:translateY(110vh) translateX(0);opacity:0}
+  5%{opacity:1}
+  90%{opacity:0.4}
+  100%{transform:translateY(-10vh) translateX(30px);opacity:0}
+}
+
+/* ================================================================
+   SPECIAL EFFECT: TICKER BAR
+================================================================ */
+.ticker-bar{
+  position:fixed;
+  top:0;left:0;right:0;
+  height:26px;
+  background:rgba(6,12,24,0.9);
+  border-bottom:1px solid rgba(0,212,255,0.12);
+  overflow:hidden;
+  z-index:900;
+  backdrop-filter:blur(10px);
+}
+[data-theme="light"] .ticker-bar{background:rgba(238,243,250,0.9);border-bottom-color:rgba(0,133,184,0.12)}
+.ticker-track{
+  display:flex;
+  align-items:center;
+  height:100%;
+  width:max-content;
+  animation:tickerScroll 60s linear infinite;
+  gap:0;
+}
+@keyframes tickerScroll{
+  0%{transform:translateX(0)}
+  100%{transform:translateX(-50%)}
+}
+.tick-item{
+  display:flex;
+  align-items:center;
+  gap:6px;
+  padding:0 24px;
+  font-family:var(--font-mono);
+  font-size:10px;
+  border-right:1px solid rgba(0,212,255,0.08);
+  white-space:nowrap;
+}
+.tick-label{color:var(--text-dim);letter-spacing:.06em}
+.tick-val{font-weight:500}
+.tick-up{color:#00E676}
+
+/* ================================================================
+   THEME TOGGLE
+================================================================ */
+.theme-toggle{
+  position:fixed;top:32px;right:1.2rem;
+  z-index:9999;width:40px;height:40px;
+  border-radius:50%;
+  background:var(--glass-bg);
+  border:1px solid var(--glass-border);
+  backdrop-filter:blur(12px);
+  display:flex;align-items:center;justify-content:center;
+  font-size:1rem;transition:var(--transition);
+}
+.theme-toggle:hover{border-color:var(--cyan);transform:scale(1.1)}
+.theme-icon{position:absolute;transition:var(--transition)}
+.theme-icon.sun{opacity:0;transform:rotate(90deg) scale(.5)}
+.theme-icon.moon{opacity:1;transform:rotate(0) scale(1)}
+[data-theme="light"] .theme-icon.sun{opacity:1;transform:rotate(0) scale(1)}
+[data-theme="light"] .theme-icon.moon{opacity:0;transform:rotate(-90deg) scale(.5)}
+
+/* ================================================================
+   NAVIGATION
+================================================================ */
+.navbar{
+  position:fixed;top:26px;left:0;right:0;
+  z-index:1000;transition:var(--transition);
+}
+.navbar.scrolled{
+  background:rgba(6,12,24,.94);
+  backdrop-filter:blur(20px);
+  border-bottom:1px solid var(--glass-border);
+  top:26px;
+}
+[data-theme="light"] .navbar.scrolled{background:rgba(238,243,250,.94)}
+.nav-container{
+  max-width:var(--container-max);margin:0 auto;
+  padding:1rem 2rem;
+  display:flex;align-items:center;justify-content:space-between;
+}
+.nav-logo{font-family:var(--font-display);font-size:1.5rem;font-weight:800;letter-spacing:-.02em}
+.logo-first{color:var(--text-primary)}
+.logo-dot{color:var(--cyan)}
+.nav-links{display:flex;align-items:center;gap:.2rem}
+.nav-link{
+  padding:.4rem .85rem;border-radius:var(--radius-sm);
+  font-size:.88rem;color:var(--text-secondary);transition:var(--transition);
+}
+.nav-link:hover{color:var(--text-primary);background:var(--cyan-dim)}
+.nav-link.active{color:var(--cyan)}
+.nav-cta{
+  background:var(--cyan-dim);
+  border:1px solid var(--cyan-glow);
+  color:var(--cyan)!important;margin-left:.5rem;
+}
+.nav-cta:hover{background:var(--cyan)!important;color:#000!important}
+.nav-hamburger{display:none;flex-direction:column;gap:5px;padding:6px}
+.nav-hamburger span{display:block;width:22px;height:2px;background:var(--text-primary);border-radius:2px;transition:var(--transition)}
+.mobile-menu{display:none;flex-direction:column;padding:1rem 2rem 1.5rem;background:var(--bg-surface);border-top:1px solid var(--glass-border);gap:.2rem}
+.mobile-menu.open{display:flex}
+.mobile-link{padding:.65rem .5rem;color:var(--text-secondary);font-size:1rem;border-bottom:1px solid var(--border);transition:var(--transition)}
+.mobile-link:hover{color:var(--cyan);padding-left:1rem}
+
+/* ================================================================
+   LAYOUT
+================================================================ */
+.container{max-width:var(--container-max);margin:0 auto;padding:0 2rem}
+.section{padding:var(--section-pad) 0;position:relative;z-index:2}
+.section-header{text-align:center;margin-bottom:3.5rem}
+.section-eyebrow{display:inline-block;font-size:.75rem;font-weight:500;letter-spacing:.15em;text-transform:uppercase;color:var(--cyan);margin-bottom:.75rem}
+.section-title{font-family:var(--font-display);font-size:clamp(1.8rem,4vw,2.8rem);font-weight:700;color:var(--text-primary);letter-spacing:-.02em;line-height:1.15}
+.section-subtitle{margin-top:1rem;color:var(--text-secondary);font-size:1.05rem;max-width:620px;margin-left:auto;margin-right:auto}
+.subsection-title{font-family:var(--font-display);font-size:1.2rem;font-weight:600;color:var(--text-primary);margin:3rem 0 1.25rem;padding-bottom:.5rem;border-bottom:1px solid var(--border)}
+
+/* Glass card */
+.glass-card{
+  background:var(--glass-bg);
+  border:1px solid var(--glass-border);
+  border-radius:var(--radius-lg);
+  backdrop-filter:blur(16px);
+  -webkit-backdrop-filter:blur(16px);
+  transition:var(--transition);
+}
+.glass-card:hover{
+  border-color:var(--border-hover);
+  transform:translateY(-3px);
+  box-shadow:0 14px 44px rgba(0,212,255,0.07);
+}
+
+/* ================================================================
+   SPECIAL EFFECT: 3D TILT CARDS
+   JS adds mouse-tracking transforms to elements with .tilt-card
+================================================================ */
+.tilt-card{
+  transform-style:preserve-3d;
+  transition:transform .12s ease, box-shadow .12s ease, border-color .3s;
+  will-change:transform;
+}
+.tilt-card .tilt-shine{
+  position:absolute;inset:0;
+  border-radius:inherit;
+  background:radial-gradient(circle at var(--mx,50%) var(--my,50%),rgba(0,212,255,0.10),transparent 60%);
+  pointer-events:none;
+  z-index:10;
+  opacity:0;
+  transition:opacity .2s;
+}
+.tilt-card:hover .tilt-shine{opacity:1}
+
+/* ================================================================
+   BUTTONS
+================================================================ */
+.btn{
+  display:inline-flex;align-items:center;gap:.5rem;
+  padding:.75rem 1.75rem;border-radius:var(--radius-md);
+  font-family:var(--font-body);font-size:.95rem;font-weight:500;
+  cursor:pointer;transition:var(--transition);
+  text-decoration:none;border:1px solid transparent;white-space:nowrap;
+}
+.btn-primary{background:var(--cyan);color:#000;border-color:var(--cyan);font-weight:600}
+.btn-primary:hover{background:#33DDFF;transform:translateY(-2px);box-shadow:0 8px 28px rgba(0,212,255,.4)}
+.btn-outline{background:transparent;color:var(--text-primary);border-color:var(--glass-border)}
+.btn-outline:hover{border-color:var(--cyan);color:var(--cyan);transform:translateY(-2px)}
+.btn-large{padding:.9rem 2.25rem;font-size:1rem}
+.btn-full{width:100%;justify-content:center}
+
+/* ================================================================
+   SCROLL ANIMATIONS
+================================================================ */
+.reveal-up,.reveal-left,.reveal-right{opacity:0;transition:opacity .7s ease,transform .7s cubic-bezier(.4,0,.2,1)}
+.reveal-up{transform:translateY(40px)}
+.reveal-left{transform:translateX(-40px)}
+.reveal-right{transform:translateX(40px)}
+.revealed{opacity:1!important;transform:translate(0)!important}
+.delay-1{transition-delay:.1s}
+.delay-2{transition-delay:.2s}
+.delay-3{transition-delay:.3s}
+.delay-4{transition-delay:.4s}
+.delay-5{transition-delay:.5s}
+.delay-6{transition-delay:.6s}
+
+/* ================================================================
+   HERO SECTION
+================================================================ */
+.hero{
+  position:relative;min-height:100vh;
+  display:flex;align-items:center;justify-content:center;
+  overflow:hidden;
+  background:
+    radial-gradient(ellipse 80% 60% at 20% 50%,rgba(0,212,255,.06) 0%,transparent 60%),
+    radial-gradient(ellipse 60% 50% at 80% 20%,rgba(155,93,229,.05) 0%,transparent 60%),
+    radial-gradient(ellipse 50% 70% at 70% 80%,rgba(0,184,160,.04) 0%,transparent 60%),
+    var(--bg-base);
+  padding-top:52px; /* ticker + nav */
+}
+
+/* Neural network canvas */
+.neural-canvas{
+  position:absolute;inset:0;width:100%;height:100%;
+  z-index:0;pointer-events:none;
+}
+
+/* ECG lines */
+.ecg-container{
+  position:absolute;left:0;right:0;
+  z-index:1;pointer-events:none;
+}
+.ecg-line{width:100%;pointer-events:none;display:block}
+.ecg-1{bottom:18%;height:60px;opacity:.22}
+.ecg-2{bottom:10%;height:50px;opacity:.13}
+.ecg-path{
+  fill:none;stroke:var(--cyan);stroke-width:1.5;
+  stroke-linecap:round;stroke-linejoin:round;
+  stroke-dasharray:3000;stroke-dashoffset:3000;
+  animation:ecgDraw 3.5s ease forwards .3s;
+}
+.ecg-2 .ecg-path{animation-delay:.9s;animation-duration:4s;stroke:var(--teal)}
+@keyframes ecgDraw{to{stroke-dashoffset:0}}
+
+/* Floating orbs */
+.orb{position:absolute;border-radius:50%;filter:blur(70px);pointer-events:none;z-index:1;animation:orbFloat 14s ease-in-out infinite}
+.orb-1{width:500px;height:500px;background:radial-gradient(circle,rgba(0,212,255,.09),transparent 70%);top:-150px;left:-100px;animation-duration:16s}
+.orb-2{width:350px;height:350px;background:radial-gradient(circle,rgba(155,93,229,.08),transparent 70%);bottom:5%;right:3%;animation-duration:20s;animation-delay:-6s}
+.orb-3{width:280px;height:280px;background:radial-gradient(circle,rgba(0,184,160,.07),transparent 70%);top:35%;left:60%;animation-duration:18s;animation-delay:-11s}
+@keyframes orbFloat{
+  0%,100%{transform:translate(0,0) scale(1)}
+  33%{transform:translate(28px,-22px) scale(1.04)}
+  66%{transform:translate(-14px,16px) scale(.97)}
+}
+
+/* Hexagonal grid */
+.hex-grid{
+  position:absolute;inset:0;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='60' height='52'%3E%3Cpolygon points='30,2 58,16 58,36 30,50 2,36 2,16' fill='none' stroke='rgba(0,212,255,0.04)' stroke-width='1'/%3E%3C/svg%3E");
+  background-size:60px 52px;
+  z-index:0;pointer-events:none;
+  animation:hexDrift 30s linear infinite;
+}
+@keyframes hexDrift{
+  0%{background-position:0 0}
+  100%{background-position:60px 52px}
+}
+
+.hero-content{
+  position:relative;z-index:2;
+  text-align:center;max-width:860px;
+  padding:0 2rem;padding-top:60px;
+}
+
+.hero-pre-title{
+  display:flex;align-items:center;justify-content:center;gap:10px;
+  font-family:var(--font-mono);font-size:.72rem;font-weight:500;
+  letter-spacing:.18em;text-transform:uppercase;color:var(--cyan);
+  margin-bottom:1rem;
+}
+.pre-dot{
+  width:6px;height:6px;border-radius:50%;background:var(--cyan);
+  animation:pulseDot 2s ease-in-out infinite;
+}
+.pre-dot:last-child{animation-delay:1s}
+@keyframes pulseDot{
+  0%,100%{box-shadow:0 0 0 0 var(--cyan-glow);opacity:1}
+  50%{box-shadow:0 0 0 6px transparent;opacity:.5}
+}
+
+.hero-name{
+  font-family:var(--font-display);
+  font-size:clamp(3.5rem,9vw,7rem);
+  font-weight:800;letter-spacing:-.04em;line-height:1;
+  color:var(--text-primary);margin-bottom:1.5rem;
+}
+.name-accent{
+  background:linear-gradient(135deg,var(--cyan),var(--teal));
+  -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;
+}
+
+.hero-typewriter{
+  font-family:var(--font-mono);
+  font-size:clamp(.9rem,2.2vw,1.2rem);
+  font-weight:500;color:var(--amber);
+  letter-spacing:.02em;min-height:2em;margin-bottom:1.5rem;
+}
+.tw-bracket{color:var(--text-dim);font-size:.85em}
+.cursor{animation:blink .8s step-end infinite;color:var(--cyan);font-weight:300;margin-left:1px}
+@keyframes blink{0%,100%{opacity:1}50%{opacity:0}}
+
+.hero-value{
+  font-size:clamp(.92rem,1.8vw,1.08rem);color:var(--text-secondary);
+  max-width:640px;margin:0 auto 2.5rem;line-height:1.75;
+}
+.hero-ctas{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;margin-bottom:3rem}
+
+/* ── Stat counters ── */
+.hero-stats{
+  display:flex;align-items:center;justify-content:center;
+  background:var(--glass-bg);
+  border:1px solid var(--glass-border);
+  border-radius:var(--radius-xl);
+  padding:1.25rem 2rem;backdrop-filter:blur(16px);
+  max-width:640px;margin:0 auto;
+}
+.stat-item{display:flex;flex-direction:column;align-items:center;padding:.25rem 1.5rem}
+.stat-number{
+  font-family:var(--font-display);font-size:1.8rem;font-weight:800;
+  color:var(--text-primary);line-height:1;
+  font-variant-numeric:tabular-nums;
+}
+.stat-plus{color:var(--cyan);font-size:1.2rem}
+.stat-label{font-size:.68rem;color:var(--text-secondary);letter-spacing:.05em;text-transform:uppercase;margin-top:.25rem;white-space:nowrap}
+.stat-divider{width:1px;height:40px;background:var(--border)}
+
+/* scroll indicator */
+.scroll-indicator{position:absolute;bottom:2rem;left:50%;transform:translateX(-50%);z-index:2;display:flex;flex-direction:column;align-items:center;opacity:.4;transition:var(--transition)}
+.scroll-indicator:hover{opacity:1}
+.scroll-dot{width:28px;height:44px;border:2px solid var(--glass-border);border-radius:20px;position:relative}
+.scroll-dot::after{content:'';position:absolute;top:6px;left:50%;transform:translateX(-50%);width:4px;height:8px;background:var(--cyan);border-radius:2px;animation:scrollBounce 1.8s ease-in-out infinite}
+@keyframes scrollBounce{0%,100%{top:6px;opacity:1}80%{top:22px;opacity:0}}
+
+/* ================================================================
+   ABOUT SECTION — AI Pipeline Visual (replaces photo entirely)
+================================================================ */
+.about-section{
+  background:
+    radial-gradient(ellipse 60% 80% at 100% 50%,rgba(0,212,255,.02) 0%,transparent 60%),
+    var(--bg-surface);
+}
+.about-grid{display:grid;grid-template-columns:1fr 1.6fr;gap:5rem;align-items:start}
+.about-left{display:flex;flex-direction:column;align-items:center;gap:1.5rem}
+
+/* Pipeline canvas container */
+.ai-pipeline-visual{
+  position:relative;
+  width:320px;height:360px;
+  border-radius:var(--radius-lg);
+  border:1px solid rgba(0,212,255,0.15);
+  background:var(--bg-elevated);
+  overflow:hidden;
+}
+#pipelineCanvas{display:block;width:100%;height:100%}
+
+/* Overlay metric chips */
+.pipeline-chip{
+  position:absolute;
+  padding:5px 10px;
+  background:rgba(6,12,24,.88);
+  border-radius:var(--radius-sm);
+  font-family:var(--font-mono);
+  backdrop-filter:blur(8px);
+  animation:chipPulse 4s ease-in-out infinite;
+}
+[data-theme="light"] .pipeline-chip{background:rgba(238,243,250,.92)}
+.chip-top-left{top:10px;left:10px;border:1px solid rgba(0,212,255,.2)}
+.chip-top-right{top:10px;right:10px;border:1px solid rgba(0,184,160,.2)}
+.chip-bottom-left{bottom:10px;left:10px;border:1px solid rgba(155,93,229,.2)}
+.chip-bottom-right{bottom:10px;right:10px;border:1px solid rgba(0,230,118,.2)}
+.chip-label{display:block;font-size:8px;color:var(--text-dim);letter-spacing:.08em;text-transform:uppercase;margin-bottom:2px}
+.chip-val{display:block;font-size:10px;font-weight:500;color:var(--cyan)}
+.chip-green{color:var(--green)!important}
+@keyframes chipPulse{
+  0%,100%{opacity:.8}
+  50%{opacity:1}
+}
+.chip-top-right .chip-val{color:var(--teal)}
+.chip-bottom-left .chip-val{color:var(--purple);font-size:9px}
+
+/* badges */
+.about-badges{display:flex;flex-direction:column;gap:.6rem;width:100%}
+.about-badge{display:flex;align-items:center;gap:.6rem;padding:.6rem 1rem;border-radius:var(--radius-md);font-size:.82rem;font-weight:500;border:1px solid transparent;transition:var(--transition)}
+.about-badge:hover{transform:translateX(4px)}
+.badge-cyan{background:var(--cyan-dim);border-color:rgba(0,212,255,.18);color:var(--cyan)}
+.badge-amber{background:var(--amber-dim);border-color:rgba(245,166,35,.18);color:var(--amber)}
+.badge-teal{background:var(--teal-dim);border-color:rgba(0,184,160,.18);color:var(--teal)}
+.badge-icon{font-size:1rem}
+
+/* about right */
+.about-subtitle{font-family:var(--font-display);font-size:1.5rem;font-weight:700;color:var(--text-primary);margin-bottom:1.25rem;letter-spacing:-.02em}
+.about-bio{color:var(--text-secondary);margin-bottom:1.1rem;font-size:.97rem;line-height:1.75}
+.about-bio strong{color:var(--text-primary);font-weight:500}
+.about-pillars{display:flex;flex-wrap:wrap;gap:.75rem;margin-top:2rem}
+.pillar{display:flex;align-items:center;gap:.5rem;padding:.5rem 1rem;background:var(--bg-elevated);border:1px solid var(--glass-border);border-radius:var(--radius-md);font-size:.85rem;color:var(--text-secondary);transition:var(--transition);cursor:default}
+.pillar:hover{border-color:var(--cyan);color:var(--cyan);transform:translateY(-2px)}
+.pillar-icon{font-size:1rem}
+
+/* ================================================================
+   SKILLS
+================================================================ */
+.skills-section{background:var(--bg-base)}
+.skills-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:1.5rem}
+.skill-category{padding:1.75rem;position:relative;overflow:hidden}
+.skill-cat-header{display:flex;align-items:center;gap:.75rem;margin-bottom:1.25rem}
+.skill-cat-icon{font-size:1.4rem}
+.skill-cat-title{font-family:var(--font-display);font-size:1rem;font-weight:600;color:var(--text-primary)}
+.skill-tags{display:flex;flex-wrap:wrap;gap:.5rem}
+.skill-tag{padding:.35rem .85rem;background:var(--bg-elevated);border:1px solid var(--border);border-radius:100px;font-size:.76rem;color:var(--text-secondary);transition:var(--transition);cursor:default}
+.skill-tag:hover{border-color:var(--cyan);color:var(--cyan);transform:translateY(-2px)}
+.skill-tag.tag-cyan{background:var(--cyan-dim);border-color:rgba(0,212,255,.18);color:var(--cyan)}
+.skill-tag.tag-amber{background:var(--amber-dim);border-color:rgba(245,166,35,.18);color:var(--amber)}
+.skill-tag.tag-teal{background:var(--teal-dim);border-color:rgba(0,184,160,.18);color:var(--teal)}
+
+/* ================================================================
+   STRENGTHS
+================================================================ */
+.strengths-section{
+  background:
+    radial-gradient(ellipse 80% 60% at 0% 50%,rgba(0,212,255,.03) 0%,transparent 60%),
+    var(--bg-surface);
+}
+.strengths-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1.5rem}
+.strength-card{padding:2rem;position:relative;overflow:hidden;cursor:default}
+.strength-card:focus{outline:2px solid var(--cyan);outline-offset:3px}
+.strength-icon-wrap{position:relative;display:inline-block;margin-bottom:1.25rem}
+.strength-icon{font-size:2rem;position:relative;z-index:1}
+.strength-icon-glow{position:absolute;inset:-8px;background:var(--cyan-glow);border-radius:50%;filter:blur(12px);opacity:0;transition:var(--transition);z-index:0}
+.strength-card:hover .strength-icon-glow{opacity:.55}
+.strength-title{font-family:var(--font-display);font-size:1.1rem;font-weight:700;color:var(--text-primary);margin-bottom:.75rem;letter-spacing:-.01em}
+.strength-desc{font-size:.88rem;color:var(--text-secondary);line-height:1.7;margin-bottom:1.25rem}
+.strength-tags{display:flex;flex-wrap:wrap;gap:.4rem}
+.strength-tags span{padding:.25rem .65rem;background:var(--cyan-dim);border:1px solid rgba(0,212,255,.12);border-radius:100px;font-size:.7rem;color:var(--cyan)}
+
+/* ================================================================
+   EXPERIENCE / TIMELINE
+================================================================ */
+.experience-section{background:var(--bg-base)}
+.timeline{position:relative;max-width:900px;margin:0 auto}
+.timeline::before{content:'';position:absolute;left:20px;top:0;bottom:0;width:1px;background:linear-gradient(to bottom,var(--cyan),var(--teal),transparent);opacity:.25}
+.timeline-item{position:relative;padding-left:70px;margin-bottom:2.5rem}
+.timeline-item:last-child{margin-bottom:0}
+.timeline-marker{position:absolute;left:0;top:1.8rem;display:flex;align-items:center;justify-content:center}
+.timeline-dot{width:14px;height:14px;border-radius:50%;background:var(--cyan);border:3px solid var(--bg-base);box-shadow:0 0 0 3px var(--cyan-glow),0 0 16px var(--cyan);z-index:1}
+.timeline-content{padding:1.75rem}
+.timeline-header{display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:.75rem;margin-bottom:1rem}
+.timeline-role{font-family:var(--font-display);font-size:1.15rem;font-weight:700;color:var(--text-primary);letter-spacing:-.02em}
+.timeline-company{font-size:.9rem;color:var(--cyan);font-weight:500;margin-top:.2rem}
+.timeline-meta{display:flex;flex-direction:column;align-items:flex-end;gap:.3rem}
+.timeline-location,.timeline-dates{font-size:.78rem;color:var(--text-dim)}
+.timeline-badge{padding:.2rem .7rem;border-radius:100px;font-size:.68rem;font-weight:600;letter-spacing:.05em;text-transform:uppercase}
+.timeline-badge.current{background:var(--cyan-dim);border:1px solid rgba(0,212,255,.25);color:var(--cyan)}
+.timeline-bullets{list-style:none;margin-bottom:1.25rem}
+.timeline-bullets li{font-size:.88rem;color:var(--text-secondary);line-height:1.7;margin-bottom:.6rem;padding-left:1.25rem;position:relative}
+.timeline-bullets li::before{content:'▸';position:absolute;left:0;color:var(--cyan);font-size:.7rem;top:.3em}
+.timeline-bullets li strong{color:var(--text-primary)}
+.timeline-tech{display:flex;flex-wrap:wrap;gap:.4rem}
+.timeline-tech span{padding:.2rem .6rem;background:var(--bg-elevated);border:1px solid var(--border);border-radius:100px;font-size:.7rem;color:var(--text-dim)}
+
+/* ================================================================
+   CERTIFICATIONS
+================================================================ */
+.certs-section{
+  background:
+    radial-gradient(ellipse 70% 60% at 90% 30%,rgba(155,93,229,.05) 0%,transparent 60%),
+    var(--bg-surface);
+}
+.certs-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1.25rem}
+.cert-card{padding:1.5rem;display:flex;align-items:center;gap:1.25rem;position:relative;overflow:hidden}
+.cert-card:focus{outline:2px solid var(--cyan);outline-offset:3px}
+.cert-badge{width:52px;height:52px;border-radius:var(--radius-md);display:flex;align-items:center;justify-content:center;font-size:.72rem;font-weight:800;font-family:var(--font-display);flex-shrink:0;letter-spacing:.02em}
+.cert-badge.databricks{background:linear-gradient(135deg,#FF3621,#FF6B35);color:#fff}
+.cert-badge.tableau{background:linear-gradient(135deg,#1F77B4,#57A7D3);color:#fff}
+.cert-badge.snowflake{background:linear-gradient(135deg,#29B5E8,#11A9CE);color:#fff;font-size:1.2rem}
+.cert-badge.microsoft{background:linear-gradient(135deg,#0078D4,#50B0F0);color:#fff}
+.cert-info{flex:1}
+.cert-name{font-family:var(--font-display);font-size:.9rem;font-weight:700;color:var(--text-primary);line-height:1.3;margin-bottom:.25rem}
+.cert-issuer{font-size:.76rem;color:var(--text-secondary);margin-bottom:.2rem}
+.cert-date{font-size:.71rem;color:var(--text-dim)}
+.cert-ribbon{position:absolute;top:.75rem;right:-.5rem;padding:.15rem .9rem .15rem .5rem;background:var(--cyan-dim);border:1px solid rgba(0,212,255,.18);border-radius:100px 0 0 100px;font-size:.63rem;font-weight:600;text-transform:uppercase;letter-spacing:.08em;color:var(--cyan)}
+.university-certs{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1rem;margin-bottom:1rem}
+.uni-cert{padding:1rem 1.25rem;background:var(--bg-elevated);border:1px solid var(--border);border-radius:var(--radius-md);display:flex;flex-direction:column;gap:.25rem;transition:var(--transition)}
+.uni-cert:hover{border-color:var(--border-hover)}
+.uni-name{font-size:.8rem;font-weight:600;color:var(--cyan);text-transform:uppercase;letter-spacing:.05em}
+.uni-cert-name{font-size:.86rem;color:var(--text-secondary)}
+.pd-scroll-wrap{overflow-x:auto;padding-bottom:.5rem;scrollbar-width:thin;scrollbar-color:var(--cyan-dim) transparent;cursor:grab}
+.pd-scroll-wrap:active{cursor:grabbing}
+.pd-scroll-wrap::-webkit-scrollbar{height:4px}
+.pd-scroll-wrap::-webkit-scrollbar-thumb{background:var(--cyan-dim);border-radius:2px}
+.pd-scroll-track{display:flex;gap:.75rem;padding:.25rem 0;min-width:max-content}
+.pd-item{flex-shrink:0;padding:.6rem 1rem;background:var(--bg-elevated);border:1px solid var(--border);border-radius:var(--radius-md);display:flex;flex-direction:column;gap:.2rem;min-width:160px;transition:var(--transition)}
+.pd-item:hover{border-color:var(--amber)}
+.pd-org{font-size:.66rem;font-weight:600;text-transform:uppercase;letter-spacing:.08em;color:var(--amber)}
+.pd-title{font-size:.78rem;color:var(--text-secondary);line-height:1.3}
+
+/* ================================================================
+   PROJECTS
+================================================================ */
+.projects-section{background:var(--bg-base)}
+.projects-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:1.5rem}
+.project-card{padding:2rem;position:relative;overflow:hidden;display:flex;flex-direction:column}
+.project-card:focus{outline:2px solid var(--cyan);outline-offset:3px}
+.project-accent{position:absolute;top:0;left:0;right:0;height:3px;background:var(--accent);opacity:.8;transition:var(--transition)}
+.project-card:hover .project-accent{opacity:1;height:4px}
+.project-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:1rem}
+.project-icon{font-size:1.6rem}
+.project-status{padding:.2rem .6rem;background:var(--teal-dim);border:1px solid rgba(0,184,160,.18);border-radius:100px;font-size:.66rem;font-weight:600;color:var(--teal);text-transform:uppercase;letter-spacing:.06em}
+.project-title{font-family:var(--font-display);font-size:1.1rem;font-weight:700;color:var(--text-primary);margin-bottom:.75rem;letter-spacing:-.02em}
+.project-desc{font-size:.86rem;color:var(--text-secondary);line-height:1.7;margin-bottom:1.25rem;flex:1}
+.project-stack{display:flex;flex-wrap:wrap;gap:.4rem;margin-bottom:1.25rem}
+.project-stack span{padding:.25rem .65rem;background:var(--bg-elevated);border:1px solid var(--border);border-radius:100px;font-size:.7rem;color:var(--text-dim)}
+.project-link,.project-link-static{display:inline-flex;align-items:center;gap:.4rem;font-size:.83rem;font-weight:500;margin-top:auto;padding-top:.5rem;border-top:1px solid var(--border);width:100%}
+.project-link{color:var(--cyan);text-decoration:none;transition:var(--transition)}
+.project-link-static{color:var(--text-dim);cursor:default}
+.project-link:hover{gap:.7rem}
+
+/* ================================================================
+   TOOLS
+================================================================ */
+.tools-section{background:var(--bg-surface)}
+.tools-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1.5rem}
+.tool-group{padding:1.5rem;background:var(--bg-elevated);border:1px solid var(--border);border-radius:var(--radius-lg);transition:var(--transition)}
+.tool-group:hover{border-color:var(--border-hover)}
+.tool-group-title{font-family:var(--font-display);font-size:.8rem;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:var(--text-dim);margin-bottom:1rem;padding-bottom:.5rem;border-bottom:1px solid var(--border)}
+.tool-list{display:flex;flex-direction:column;gap:.5rem}
+.tool-item{display:flex;align-items:center;gap:.75rem;font-size:.88rem;color:var(--text-secondary);padding:.35rem 0;transition:var(--transition);cursor:default;position:relative}
+.tool-item:hover{color:var(--text-primary);transform:translateX(4px)}
+.tool-dot{width:8px;height:8px;border-radius:50%;flex-shrink:0}
+.tool-dot.cyan{background:var(--cyan);box-shadow:0 0 6px var(--cyan)}
+.tool-dot.amber{background:var(--amber);box-shadow:0 0 6px var(--amber)}
+.tool-dot.teal{background:var(--teal);box-shadow:0 0 6px var(--teal)}
+.tool-dot.purple{background:var(--purple);box-shadow:0 0 6px var(--purple)}
+
+/* ================================================================
+   RESUME DOWNLOAD
+================================================================ */
+.resume-section{background:var(--bg-base)}
+.resume-banner{position:relative;padding:4rem 3rem;overflow:hidden;text-align:center;border-color:rgba(0,212,255,.12)!important}
+.resume-glow{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:600px;height:200px;background:radial-gradient(ellipse,rgba(0,212,255,.07) 0%,transparent 70%);filter:blur(30px);pointer-events:none}
+.resume-content{position:relative;z-index:1}
+.resume-title{font-family:var(--font-display);font-size:clamp(1.5rem,3vw,2.2rem);font-weight:700;color:var(--text-primary);letter-spacing:-.02em;margin-bottom:.75rem}
+.resume-subtitle{color:var(--text-secondary);max-width:560px;margin:0 auto 2rem;font-size:.97rem}
+.resume-ctas{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap}
+.resume-decoration{position:absolute;inset:0;pointer-events:none}
+.deco-circle{position:absolute;border-radius:50%;border:1px solid rgba(0,212,255,.07)}
+.deco-circle.c1{width:300px;height:300px;top:-150px;right:-50px}
+.deco-circle.c2{width:200px;height:200px;bottom:-100px;left:-30px}
+.deco-circle.c3{width:150px;height:150px;top:20%;left:10%}
+
+/* ================================================================
+   CONTACT
+================================================================ */
+.contact-section{background:var(--bg-surface)}
+.contact-grid{display:grid;grid-template-columns:1fr 1.3fr;gap:4rem;align-items:start}
+.contact-item{display:flex;align-items:flex-start;gap:1rem;margin-bottom:1.75rem}
+.contact-icon{font-size:1.3rem;margin-top:.1rem}
+.contact-label{font-size:.73rem;text-transform:uppercase;letter-spacing:.08em;color:var(--text-dim);margin-bottom:.25rem}
+.contact-value{color:var(--text-primary);font-size:.93rem;transition:var(--transition)}
+a.contact-value:hover{color:var(--cyan)}
+.social-links{display:flex;gap:.75rem;margin-top:1rem}
+.social-btn{display:flex;align-items:center;gap:.5rem;padding:.6rem 1.25rem;background:var(--bg-elevated);border:1px solid var(--border);border-radius:var(--radius-md);font-size:.83rem;color:var(--text-secondary);transition:var(--transition)}
+.social-btn:hover{border-color:var(--cyan);color:var(--cyan);transform:translateY(-2px)}
+.social-icon{font-size:.72rem;font-weight:700;font-family:var(--font-display)}
+.contact-form{padding:2rem}
+.form-group{margin-bottom:1.25rem}
+.form-label{display:block;font-size:.78rem;font-weight:500;color:var(--text-secondary);margin-bottom:.5rem;letter-spacing:.03em}
+.form-input{width:100%;padding:.75rem 1rem;background:var(--bg-elevated);border:1px solid var(--border);border-radius:var(--radius-md);color:var(--text-primary);font-family:var(--font-body);font-size:.88rem;transition:var(--transition);outline:none}
+.form-input::placeholder{color:var(--text-dim)}
+.form-input:focus{border-color:var(--cyan);background:var(--bg-surface);box-shadow:0 0 0 3px var(--cyan-dim)}
+.form-textarea{resize:vertical;min-height:120px;line-height:1.6}
+
+/* ================================================================
+   FOOTER
+================================================================ */
+.footer{background:var(--bg-base);border-top:1px solid var(--border);padding:2rem 0}
+.footer-inner{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:.5rem}
+.footer-copy,.footer-built{font-size:.78rem;color:var(--text-dim)}
+
+/* Back to top */
+.back-to-top{position:fixed;bottom:2rem;right:2rem;z-index:500;width:44px;height:44px;border-radius:50%;background:var(--cyan);color:#000;font-size:1.1rem;font-weight:700;display:flex;align-items:center;justify-content:center;opacity:0;pointer-events:none;transition:var(--transition);border:none}
+.back-to-top.visible{opacity:1;pointer-events:all}
+.back-to-top:hover{transform:translateY(-3px);box-shadow:0 6px 20px rgba(0,212,255,.4)}
+
+/* ================================================================
+   RESPONSIVE
+================================================================ */
+@media(max-width:1024px){
+  :root{--section-pad:4.5rem}
+  .about-grid{grid-template-columns:1fr;gap:3rem}
+  .about-left{max-width:340px;margin:0 auto}
+  .contact-grid{grid-template-columns:1fr;gap:2.5rem}
+}
+@media(max-width:768px){
+  :root{--section-pad:3.5rem}
+  .nav-links{display:none}
+  .nav-hamburger{display:flex}
+  .theme-toggle{top:32px;right:4rem}
+  .hero-name{font-size:clamp(2.8rem,12vw,4.5rem)}
+  .hero-stats{flex-wrap:nowrap;overflow-x:auto;padding:1rem .75rem}
+  .stat-item{padding:.25rem .75rem}
+  .stat-number{font-size:1.4rem}
+  .stat-label{font-size:.6rem}
+  .timeline::before{left:16px}
+  .timeline-item{padding-left:50px}
+  .timeline-header{flex-direction:column;gap:.5rem}
+  .timeline-meta{align-items:flex-start}
+  .skills-grid,.projects-grid,.tools-grid{grid-template-columns:1fr}
+  .resume-banner{padding:2.5rem 1.5rem}
+  .footer-inner{flex-direction:column;text-align:center}
+  .container{padding:0 1.25rem}
+  .hero-ctas{flex-direction:column;align-items:center}
+  .hero-ctas .btn{width:100%;max-width:280px;justify-content:center}
+  .data-streams{display:none}
+}
+@media(max-width:480px){
+  .certs-grid,.university-certs,.strengths-grid{grid-template-columns:1fr}
+  .hero-stats{display:grid;grid-template-columns:1fr 1fr;gap:.5rem}
+  .stat-divider{display:none}
+  .float-chip{display:none}
+}
+
+  </style>
+</head>
+<body>
+
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <!-- Ambient data-stream columns (matrix-style, healthcare themed) -->
+  <div class="data-streams" id="dataStreams" aria-hidden="true"></div>
+
+  <!-- Floating AI metric chips that drift across screen -->
+  <div class="floating-metrics" id="floatingMetrics" aria-hidden="true"></div>
+
+  <button class="theme-toggle" id="themeToggle" aria-label="Toggle light/dark mode">
+    <span class="theme-icon sun">☀</span>
+    <span class="theme-icon moon">☽</span>
+  </button>
+
+  <!-- Live metrics ticker bar at very top -->
+  <div class="ticker-bar" aria-hidden="true">
+    <div class="ticker-track" id="tickerTrack">
+      <span class="tick-item"><span class="tick-label">SQL</span> <span class="tick-val tick-up">Advanced ↑</span></span>
+      <span class="tick-item"><span class="tick-label">Databricks</span> <span class="tick-val tick-up">Certified ↑</span></span>
+      <span class="tick-item"><span class="tick-label">Claims Analytics</span> <span class="tick-val tick-up">18yr ↑</span></span>
+      <span class="tick-item"><span class="tick-label">AI Governance</span> <span class="tick-val tick-up">Active ↑</span></span>
+      <span class="tick-item"><span class="tick-label">Power BI</span> <span class="tick-val tick-up">Enterprise ↑</span></span>
+      <span class="tick-item"><span class="tick-label">Snowflake</span> <span class="tick-val tick-up">Certified ↑</span></span>
+      <span class="tick-item"><span class="tick-label">Prior Auth AI</span> <span class="tick-val tick-up">Deployed ↑</span></span>
+      <span class="tick-item"><span class="tick-label">Total Medical Cost</span> <span class="tick-val tick-up">Analytics ↑</span></span>
+      <span class="tick-item"><span class="tick-label">Generative AI</span> <span class="tick-val tick-up">Stanford ↑</span></span>
+      <span class="tick-item"><span class="tick-label">HEDIS</span> <span class="tick-val tick-up">Reporting ↑</span></span>
+      <span class="tick-item"><span class="tick-label">Python</span> <span class="tick-val tick-up">Production ↑</span></span>
+      <span class="tick-item"><span class="tick-label">Tableau</span> <span class="tick-val tick-up">Certified ↑</span></span>
+      <!-- duplicate for seamless loop -->
+      <span class="tick-item"><span class="tick-label">SQL</span> <span class="tick-val tick-up">Advanced ↑</span></span>
+      <span class="tick-item"><span class="tick-label">Databricks</span> <span class="tick-val tick-up">Certified ↑</span></span>
+      <span class="tick-item"><span class="tick-label">Claims Analytics</span> <span class="tick-val tick-up">18yr ↑</span></span>
+      <span class="tick-item"><span class="tick-label">AI Governance</span> <span class="tick-val tick-up">Active ↑</span></span>
+      <span class="tick-item"><span class="tick-label">Power BI</span> <span class="tick-val tick-up">Enterprise ↑</span></span>
+      <span class="tick-item"><span class="tick-label">Snowflake</span> <span class="tick-val tick-up">Certified ↑</span></span>
+      <span class="tick-item"><span class="tick-label">Prior Auth AI</span> <span class="tick-val tick-up">Deployed ↑</span></span>
+      <span class="tick-item"><span class="tick-label">Total Medical Cost</span> <span class="tick-val tick-up">Analytics ↑</span></span>
+      <span class="tick-item"><span class="tick-label">Generative AI</span> <span class="tick-val tick-up">Stanford ↑</span></span>
+    </div>
+  </div>
+
+  <nav class="navbar" id="navbar" role="navigation" aria-label="Main navigation">
+    <div class="nav-container">
+      <a href="#hero" class="nav-logo" aria-label="Jason Albano - Home">
+        <span class="logo-first">JA</span><span class="logo-dot">.</span>
+      </a>
+      <ul class="nav-links" role="list">
+        <li><a href="#about"          class="nav-link">About</a></li>
+        <li><a href="#skills"         class="nav-link">Skills</a></li>
+        <li><a href="#experience"     class="nav-link">Experience</a></li>
+        <li><a href="#certifications" class="nav-link">Certs</a></li>
+        <li><a href="#projects"       class="nav-link">Projects</a></li>
+        <li><a href="#tools"          class="nav-link">Tools</a></li>
+        <li><a href="#contact"        class="nav-link nav-cta">Contact</a></li>
+      </ul>
+      <button class="nav-hamburger" id="navHamburger" aria-label="Open navigation menu" aria-expanded="false" aria-controls="mobileMenu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+    <div class="mobile-menu" id="mobileMenu" role="menu" aria-hidden="true">
+      <a href="#about"          class="mobile-link" role="menuitem">About</a>
+      <a href="#skills"         class="mobile-link" role="menuitem">Skills</a>
+      <a href="#experience"     class="mobile-link" role="menuitem">Experience</a>
+      <a href="#certifications" class="mobile-link" role="menuitem">Certifications</a>
+      <a href="#projects"       class="mobile-link" role="menuitem">Projects</a>
+      <a href="#tools"          class="mobile-link" role="menuitem">Tools</a>
+      <a href="#contact"        class="mobile-link" role="menuitem">Contact</a>
+    </div>
+  </nav>
+
+  <main id="main-content">
+
+    <!-- ═══════════════════════════════════════════════════
+         HERO
+    ════════════════════════════════════════════════════ -->
+    <section id="hero" class="hero" aria-label="Introduction">
+      <!-- Neural network canvas -->
+      <canvas id="neuralCanvas" class="neural-canvas" aria-hidden="true"></canvas>
+      <!-- ECG signal lines (multiple) -->
+      <div class="ecg-container" aria-hidden="true">
+        <svg class="ecg-line ecg-1" viewBox="0 0 1400 60" preserveAspectRatio="none">
+          <polyline class="ecg-path" points="0,30 80,30 110,5 130,55 150,30 240,30 270,8 285,52 300,30 380,30 410,12 430,48 450,30 560,30 590,6 610,54 630,30 740,30 770,10 790,50 810,30 920,30 950,14 970,46 990,30 1100,30 1130,7 1150,53 1170,30 1280,30 1310,9 1330,51 1350,30 1400,30"/>
+        </svg>
+        <svg class="ecg-line ecg-2" viewBox="0 0 1400 60" preserveAspectRatio="none">
+          <polyline class="ecg-path" points="0,30 60,30 90,12 110,48 130,30 210,30 240,4 260,56 280,30 360,30 390,10 410,50 430,30 520,30 550,8 570,52 590,30 680,30 710,11 730,49 750,30 840,30 870,5 890,55 910,30 1000,30 1030,9 1050,51 1070,30 1160,30 1190,6 1210,54 1230,30 1320,30 1350,11 1370,49 1390,30 1400,30"/>
+        </svg>
+      </div>
+
+      <div class="orb orb-1" aria-hidden="true"></div>
+      <div class="orb orb-2" aria-hidden="true"></div>
+      <div class="orb orb-3" aria-hidden="true"></div>
+
+      <!-- Hexagonal grid overlay -->
+      <div class="hex-grid" aria-hidden="true"></div>
+
+      <div class="hero-content">
+        <p class="hero-pre-title reveal-up">
+          <span class="pre-dot" aria-hidden="true"></span>
+          Senior AI-Enabled Healthcare Data Analyst
+          <span class="pre-dot" aria-hidden="true"></span>
+        </p>
+        <h1 class="hero-name reveal-up delay-1">
+          Jason L.<br><span class="name-accent">Albano</span>
+        </h1>
+        <div class="hero-typewriter reveal-up delay-2" aria-live="polite">
+          <span class="tw-bracket" aria-hidden="true">&lt;</span><span id="typewriterText"></span><span class="cursor" aria-hidden="true">|</span><span class="tw-bracket" aria-hidden="true">/&gt;</span>
+        </div>
+        <p class="hero-value reveal-up delay-3">
+          18+ years transforming complex healthcare data into strategic insights that drive cost containment,
+          operational efficiency, and smarter decisions — powered by AI, Databricks, and enterprise BI.
+        </p>
+        <div class="hero-ctas reveal-up delay-4">
+          <a href="#projects" class="btn btn-primary">View My Work</a>
+          <a href="#resume-download" class="btn btn-outline">Download Resume</a>
+        </div>
+        <div class="hero-stats reveal-up delay-5">
+          <div class="stat-item">
+            <span class="stat-number" data-target="18">0</span><span class="stat-plus">+</span>
+            <span class="stat-label">Years Experience</span>
+          </div>
+          <div class="stat-divider" aria-hidden="true"></div>
+          <div class="stat-item">
+            <span class="stat-number" data-target="4">0</span>
+            <span class="stat-label">Active Certifications</span>
+          </div>
+          <div class="stat-divider" aria-hidden="true"></div>
+          <div class="stat-item">
+            <span class="stat-number" data-target="10">0</span><span class="stat-plus">+</span>
+            <span class="stat-label">BI &amp; Analytics Tools</span>
+          </div>
+          <div class="stat-divider" aria-hidden="true"></div>
+          <div class="stat-item">
+            <span class="stat-number" data-target="6">0</span>
+            <span class="stat-label">Healthcare Employers</span>
+          </div>
+        </div>
+      </div>
+
+      <a href="#about" class="scroll-indicator" aria-label="Scroll down to About section">
+        <div class="scroll-dot"></div>
+      </a>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════
+         ABOUT  —  no photo, replaced with AI data visual
+    ════════════════════════════════════════════════════ -->
+    <section id="about" class="section about-section" aria-labelledby="about-heading">
+      <div class="container">
+        <div class="section-header reveal-up">
+          <span class="section-eyebrow">Who I Am</span>
+          <h2 id="about-heading" class="section-title">About Me</h2>
+        </div>
+        <div class="about-grid">
+
+          <!-- Left: animated AI pipeline visual instead of photo -->
+          <div class="about-left reveal-left">
+            <div class="ai-pipeline-visual" aria-hidden="true">
+              <canvas id="pipelineCanvas" width="320" height="360"></canvas>
+              <!-- Overlaid live-counter chips -->
+              <div class="pipeline-chip chip-top-left">
+                <span class="chip-label">Model Accuracy</span>
+                <span class="chip-val" id="accuracyVal">97.4%</span>
+              </div>
+              <div class="pipeline-chip chip-top-right">
+                <span class="chip-label">Claims Processed</span>
+                <span class="chip-val" id="claimsVal">∞</span>
+              </div>
+              <div class="pipeline-chip chip-bottom-left">
+                <span class="chip-label">AI Stack</span>
+                <span class="chip-val">Databricks · GPT · Copilot</span>
+              </div>
+              <div class="pipeline-chip chip-bottom-right">
+                <span class="chip-label">Data Quality</span>
+                <span class="chip-val chip-green">✓ Validated</span>
+              </div>
+            </div>
+
+            <div class="about-badges">
+              <div class="about-badge badge-cyan"><span class="badge-icon">⚡</span><span>AI-Enabled Analytics</span></div>
+              <div class="about-badge badge-amber"><span class="badge-icon">🏥</span><span>Healthcare Domain Expert</span></div>
+              <div class="about-badge badge-teal"><span class="badge-icon">📊</span><span>Enterprise BI Leader</span></div>
+            </div>
+          </div>
+
+          <!-- Right: bio -->
+          <div class="about-right reveal-right">
+            <h3 class="about-subtitle">Turning Data Complexity Into Clarity</h3>
+            <p class="about-bio">
+              I'm a Senior Healthcare Data Analyst and Business Intelligence professional based in Nashville, TN,
+              with over 18 years of experience at the intersection of healthcare operations, advanced analytics,
+              and emerging AI technology.
+            </p>
+            <p class="about-bio">
+              At <strong>The Cigna Group</strong>, I serve as a Business Analytics Advisor and Claims/Data SME,
+              leading complex analytics initiatives across Total Medical Cost, provider performance, utilization
+              management, and cost containment. I build executive dashboards, automate reporting workflows, and
+              deploy AI-enabled tools to surface insights that directly influence strategic decision-making.
+            </p>
+            <p class="about-bio">
+              My edge is the rare combination of deep healthcare domain expertise — spanning claims, quality, HEDIS,
+              fraud detection, and value-based care — with modern technical fluency in Databricks, SQL, Python,
+              Tableau, Power BI, and AI tools like Databricks Genie, Microsoft Copilot, and Cursor AI.
+            </p>
+            <p class="about-bio">
+              I hold a <strong>Stanford Certificate in AI in Healthcare</strong>, a <strong>Vanderbilt Certificate
+              in Generative AI</strong>, and active certifications from Databricks, Tableau, Snowflake, and
+              Microsoft. I believe the future of healthcare analytics is AI-augmented — and I'm building it today.
+            </p>
+            <div class="about-pillars">
+              <div class="pillar"><span class="pillar-icon" aria-hidden="true">🎯</span><span>Cost Containment</span></div>
+              <div class="pillar"><span class="pillar-icon" aria-hidden="true">🤖</span><span>AI Automation</span></div>
+              <div class="pillar"><span class="pillar-icon" aria-hidden="true">📈</span><span>BI Strategy</span></div>
+              <div class="pillar"><span class="pillar-icon" aria-hidden="true">🔍</span><span>Claims Analytics</span></div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════
+         CORE SKILLS
+    ════════════════════════════════════════════════════ -->
+    <section id="skills" class="section skills-section" aria-labelledby="skills-heading">
+      <div class="container">
+        <div class="section-header reveal-up">
+          <span class="section-eyebrow">What I Do</span>
+          <h2 id="skills-heading" class="section-title">Core Skills</h2>
+          <p class="section-subtitle">A full-stack analytics profile spanning data engineering, visualization, AI, and healthcare domain expertise.</p>
+        </div>
+        <div class="skills-grid">
+
+          <div class="skill-category glass-card tilt-card reveal-up delay-1">
+            <div class="skill-cat-header">
+              <span class="skill-cat-icon" aria-hidden="true">📊</span>
+              <h3 class="skill-cat-title">Healthcare Analytics</h3>
+            </div>
+            <div class="skill-tags">
+              <span class="skill-tag">Claims Analysis</span>
+              <span class="skill-tag">Total Medical Cost</span>
+              <span class="skill-tag">Provider Analytics</span>
+              <span class="skill-tag">Utilization Management</span>
+              <span class="skill-tag">HEDIS Reporting</span>
+              <span class="skill-tag">Fraud Detection</span>
+              <span class="skill-tag">Value-Based Care</span>
+              <span class="skill-tag">Cost Containment</span>
+            </div>
+          </div>
+
+          <div class="skill-category glass-card tilt-card reveal-up delay-2">
+            <div class="skill-cat-header">
+              <span class="skill-cat-icon" aria-hidden="true">🤖</span>
+              <h3 class="skill-cat-title">AI &amp; Automation</h3>
+            </div>
+            <div class="skill-tags">
+              <span class="skill-tag tag-cyan">Databricks Genie</span>
+              <span class="skill-tag tag-cyan">Microsoft Copilot</span>
+              <span class="skill-tag tag-cyan">Cursor AI</span>
+              <span class="skill-tag tag-cyan">Prompt Engineering</span>
+              <span class="skill-tag tag-cyan">Generative AI</span>
+              <span class="skill-tag tag-cyan">AI Governance</span>
+              <span class="skill-tag tag-cyan">LLM Integration</span>
+              <span class="skill-tag tag-cyan">Workflow Automation</span>
+            </div>
+          </div>
+
+          <div class="skill-category glass-card tilt-card reveal-up delay-3">
+            <div class="skill-cat-header">
+              <span class="skill-cat-icon" aria-hidden="true">🖥️</span>
+              <h3 class="skill-cat-title">BI &amp; Visualization</h3>
+            </div>
+            <div class="skill-tags">
+              <span class="skill-tag tag-amber">Tableau</span>
+              <span class="skill-tag tag-amber">Microsoft Power BI</span>
+              <span class="skill-tag tag-amber">Looker</span>
+              <span class="skill-tag tag-amber">SSRS</span>
+              <span class="skill-tag tag-amber">SSAS</span>
+              <span class="skill-tag tag-amber">Crystal Reports</span>
+              <span class="skill-tag tag-amber">Business Objects</span>
+              <span class="skill-tag tag-amber">Executive Dashboards</span>
+            </div>
+          </div>
+
+          <div class="skill-category glass-card tilt-card reveal-up delay-4">
+            <div class="skill-cat-header">
+              <span class="skill-cat-icon" aria-hidden="true">⚙️</span>
+              <h3 class="skill-cat-title">Data Engineering</h3>
+            </div>
+            <div class="skill-tags">
+              <span class="skill-tag tag-teal">SQL (Advanced)</span>
+              <span class="skill-tag tag-teal">Python</span>
+              <span class="skill-tag tag-teal">SAS</span>
+              <span class="skill-tag tag-teal">Databricks / Delta Lake</span>
+              <span class="skill-tag tag-teal">Snowflake</span>
+              <span class="skill-tag tag-teal">SQL Server</span>
+              <span class="skill-tag tag-teal">Stored Procedures</span>
+              <span class="skill-tag tag-teal">Data Warehousing</span>
+            </div>
+          </div>
+
+          <div class="skill-category glass-card tilt-card reveal-up delay-5">
+            <div class="skill-cat-header">
+              <span class="skill-cat-icon" aria-hidden="true">🎯</span>
+              <h3 class="skill-cat-title">Strategy &amp; Leadership</h3>
+            </div>
+            <div class="skill-tags">
+              <span class="skill-tag">Executive Reporting</span>
+              <span class="skill-tag">Data Storytelling</span>
+              <span class="skill-tag">Cross-functional Leadership</span>
+              <span class="skill-tag">Stakeholder Communication</span>
+              <span class="skill-tag">Process Improvement</span>
+              <span class="skill-tag">Mentoring &amp; Training</span>
+              <span class="skill-tag">Data Governance</span>
+              <span class="skill-tag">Requirements Analysis</span>
+            </div>
+          </div>
+
+          <div class="skill-category glass-card tilt-card reveal-up delay-6">
+            <div class="skill-cat-header">
+              <span class="skill-cat-icon" aria-hidden="true">☁️</span>
+              <h3 class="skill-cat-title">Cloud &amp; Platforms</h3>
+            </div>
+            <div class="skill-tags">
+              <span class="skill-tag">AWS (Essentials)</span>
+              <span class="skill-tag">Databricks Lakehouse</span>
+              <span class="skill-tag">Snowflake</span>
+              <span class="skill-tag">Alation (Data Catalog)</span>
+              <span class="skill-tag">SharePoint</span>
+              <span class="skill-tag">Altair Analytics Workbench</span>
+              <span class="skill-tag">Oracle</span>
+              <span class="skill-tag">Microsoft Azure</span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════
+         AI + HEALTHCARE STRENGTHS
+    ════════════════════════════════════════════════════ -->
+    <section id="strengths" class="section strengths-section" aria-labelledby="strengths-heading">
+      <div class="container">
+        <div class="section-header reveal-up">
+          <span class="section-eyebrow">My Edge</span>
+          <h2 id="strengths-heading" class="section-title">AI + Healthcare Analytics Strengths</h2>
+          <p class="section-subtitle">Where AI capability meets deep healthcare domain expertise — driving real business impact.</p>
+        </div>
+        <div class="strengths-grid">
+
+          <div class="strength-card glass-card tilt-card reveal-up delay-1" tabindex="0">
+            <div class="strength-icon-wrap" aria-hidden="true">
+              <div class="strength-icon">⚡</div>
+              <div class="strength-icon-glow"></div>
+            </div>
+            <h3 class="strength-title">Prior Auth &amp; Claims Automation</h3>
+            <p class="strength-desc">Leveraging Databricks Genie, Copilot, and Cursor AI to automate prior authorization workflows, streamline claims analysis, and eliminate manual reporting bottlenecks — accelerating cycle times while improving accuracy.</p>
+            <div class="strength-tags"><span>Databricks Genie</span><span>Prior Authorization</span><span>Claims Processing</span></div>
+          </div>
+
+          <div class="strength-card glass-card tilt-card reveal-up delay-2" tabindex="0">
+            <div class="strength-icon-wrap" aria-hidden="true">
+              <div class="strength-icon">💰</div>
+              <div class="strength-icon-glow"></div>
+            </div>
+            <h3 class="strength-title">Cost Containment &amp; TMC Analytics</h3>
+            <p class="strength-desc">Identifying Total Medical Cost drivers, utilization trends, and cost-saving opportunities through advanced analytics across claims data, provider performance, and population health.</p>
+            <div class="strength-tags"><span>Total Medical Cost</span><span>Utilization Analysis</span><span>Cost Savings</span></div>
+          </div>
+
+          <div class="strength-card glass-card tilt-card reveal-up delay-3" tabindex="0">
+            <div class="strength-icon-wrap" aria-hidden="true">
+              <div class="strength-icon">🔍</div>
+              <div class="strength-icon-glow"></div>
+            </div>
+            <h3 class="strength-title">Fraud, Waste &amp; Abuse Detection</h3>
+            <p class="strength-desc">Applying advanced SQL analytics, anomaly detection patterns, and AI-assisted pattern recognition to identify fraudulent claims, overpayments, and billing anomalies across multi-payer healthcare datasets.</p>
+            <div class="strength-tags"><span>Fraud Detection</span><span>Anomaly Detection</span><span>Claims Integrity</span></div>
+          </div>
+
+          <div class="strength-card glass-card tilt-card reveal-up delay-4" tabindex="0">
+            <div class="strength-icon-wrap" aria-hidden="true">
+              <div class="strength-icon">🛡️</div>
+              <div class="strength-icon-glow"></div>
+            </div>
+            <h3 class="strength-title">AI Governance &amp; Data Quality</h3>
+            <p class="strength-desc">Ensuring data accuracy, integrity, and compliance within AI-assisted analytics pipelines. Experienced in Alation data catalog governance, reporting quality frameworks, and aligning AI outputs with regulatory standards.</p>
+            <div class="strength-tags"><span>Data Governance</span><span>Alation</span><span>Data Quality</span></div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════
+         EXPERIENCE / TIMELINE
+    ════════════════════════════════════════════════════ -->
+    <section id="experience" class="section experience-section" aria-labelledby="experience-heading">
+      <div class="container">
+        <div class="section-header reveal-up">
+          <span class="section-eyebrow">Career History</span>
+          <h2 id="experience-heading" class="section-title">Work Experience</h2>
+        </div>
+        <div class="timeline" role="list">
+
+          <div class="timeline-item reveal-right" role="listitem">
+            <div class="timeline-marker" aria-hidden="true"><div class="timeline-dot"></div></div>
+            <div class="timeline-content glass-card">
+              <div class="timeline-header">
+                <div class="timeline-title-group">
+                  <h3 class="timeline-role">Business Analytics Advisor</h3>
+                  <p class="timeline-company">The Cigna Group</p>
+                </div>
+                <div class="timeline-meta">
+                  <span class="timeline-location">Nashville, TN</span>
+                  <span class="timeline-dates">Aug 2017 – Present</span>
+                  <span class="timeline-badge current">Current</span>
+                </div>
+              </div>
+              <ul class="timeline-bullets">
+                <li>Senior Healthcare Data Analyst and Claims SME supporting complex analytics initiatives across Total Medical Cost, provider performance, quality improvement, and operational reporting at enterprise scale.</li>
+                <li>Leverages AI-enabled tools — Databricks Genie, Microsoft Copilot, Cursor AI, and prompt engineering — to streamline workflows, automate documentation, and accelerate healthcare claims analysis.</li>
+                <li>Develops executive dashboards, provider analytics, and utilization reporting using Databricks, Tableau, Power BI, Looker, Altair Analytics Workbench, SQL Server, SAS, Python, and Excel.</li>
+                <li>Supports AI-assisted initiatives in cost containment, fraud detection, prior authorization, and utilization management while ensuring data accuracy and governance across enterprise analytics.</li>
+                <li>Partners with cross-functional business and leadership teams to communicate analytical findings and deliver data-driven recommendations that influence strategic decision-making.</li>
+              </ul>
+              <div class="timeline-tech">
+                <span>Databricks</span><span>SQL</span><span>Power BI</span><span>Tableau</span><span>Python</span><span>SAS</span><span>Genie AI</span><span>Looker</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="timeline-item reveal-left" role="listitem">
+            <div class="timeline-marker" aria-hidden="true"><div class="timeline-dot"></div></div>
+            <div class="timeline-content glass-card">
+              <div class="timeline-header">
+                <div class="timeline-title-group">
+                  <h3 class="timeline-role">Senior Reporting &amp; Visualization Analyst</h3>
+                  <p class="timeline-company">naviHealth</p>
+                </div>
+                <div class="timeline-meta">
+                  <span class="timeline-location">Nashville, TN</span>
+                  <span class="timeline-dates">Dec 2016 – Jul 2017</span>
+                </div>
+              </div>
+              <ul class="timeline-bullets">
+                <li>Developed interactive dashboards, drill-down reporting, and analytical solutions using Tableau, SSAS, PerformancePoint, and SQL to support business performance and strategic decisions.</li>
+                <li>Designed user-focused analytics solutions including dashboards, ad-hoc reports, data extracts, and discovery tools to improve operational efficiency.</li>
+                <li>Supported CMS reporting requirements and reporting automation using SQL and BI technologies across internal and external stakeholder needs.</li>
+              </ul>
+              <div class="timeline-tech">
+                <span>Tableau</span><span>SSAS</span><span>SQL</span><span>PerformancePoint</span><span>CMS Reporting</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="timeline-item reveal-right" role="listitem">
+            <div class="timeline-marker" aria-hidden="true"><div class="timeline-dot"></div></div>
+            <div class="timeline-content glass-card">
+              <div class="timeline-header">
+                <div class="timeline-title-group">
+                  <h3 class="timeline-role">Business Systems Analyst III</h3>
+                  <p class="timeline-company">AdvanceMed (NCI)</p>
+                </div>
+                <div class="timeline-meta">
+                  <span class="timeline-location">Nashville, TN</span>
+                  <span class="timeline-dates">Jan 2015 – Dec 2016</span>
+                </div>
+              </div>
+              <ul class="timeline-bullets">
+                <li>Led design, development, and maintenance of interactive dashboards, reports, and BI solutions using SSRS, SSAS, PowerPivot, and SQL Server for mission-critical analytics initiatives.</li>
+                <li>Developed SQL queries, stored procedures, views, and UDFs to support reporting automation and operational analytics, contributing to a <strong>CMMI Level III</strong>-rated team.</li>
+                <li>Collaborated with business leaders and IT to translate reporting requirements into high-quality BI solutions, supporting CMS compliance and QA testing.</li>
+              </ul>
+              <div class="timeline-tech">
+                <span>SSRS</span><span>SSAS</span><span>SQL Server</span><span>PowerPivot</span><span>CMS</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="timeline-item reveal-left" role="listitem">
+            <div class="timeline-marker" aria-hidden="true"><div class="timeline-dot"></div></div>
+            <div class="timeline-content glass-card">
+              <div class="timeline-header">
+                <div class="timeline-title-group">
+                  <h3 class="timeline-role">Senior Reporting Analyst</h3>
+                  <p class="timeline-company">UnitedHealthGroup</p>
+                </div>
+                <div class="timeline-meta">
+                  <span class="timeline-location">Remote (Baltimore, MD)</span>
+                  <span class="timeline-dates">Oct 2013 – Aug 2014</span>
+                </div>
+              </div>
+              <ul class="timeline-bullets">
+                <li>Developed and automated operational KPI dashboards and ad-hoc reporting solutions using SSRS, PerformancePoint, SharePoint, Business Objects, and Crystal Reports.</li>
+                <li>Trained and mentored junior analysts on PowerPivot, Power View, and SSRS best practices — improving team reporting capabilities across the department.</li>
+              </ul>
+              <div class="timeline-tech">
+                <span>SSRS</span><span>SharePoint</span><span>Business Objects</span><span>Crystal Reports</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="timeline-item reveal-right" role="listitem">
+            <div class="timeline-marker" aria-hidden="true"><div class="timeline-dot"></div></div>
+            <div class="timeline-content glass-card">
+              <div class="timeline-header">
+                <div class="timeline-title-group">
+                  <h3 class="timeline-role">Medical Economics Analyst</h3>
+                  <p class="timeline-company">MedSolutions</p>
+                </div>
+                <div class="timeline-meta">
+                  <span class="timeline-location">Franklin, TN</span>
+                  <span class="timeline-dates">Nov 2012 – Oct 2013</span>
+                </div>
+              </div>
+              <ul class="timeline-bullets">
+                <li>Provided analytics supporting 40+ insurance clients including Cigna, Aetna, BCBS, and HealthSpring — driving sales growth, pricing strategy, and operational decisions.</li>
+                <li>Automated 50+ client reports using SQL, SSRS, SSAS, SAS, and Tableau — significantly improving reporting efficiency and analytics scalability.</li>
+                <li>Conducted savings forecasts, pricing analysis, and trend studies across targeted medical cost categories and geographies.</li>
+              </ul>
+              <div class="timeline-tech">
+                <span>SQL</span><span>SAS</span><span>Tableau</span><span>SSRS</span><span>Medical Economics</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="timeline-item reveal-left" role="listitem">
+            <div class="timeline-marker" aria-hidden="true"><div class="timeline-dot"></div></div>
+            <div class="timeline-content glass-card">
+              <div class="timeline-header">
+                <div class="timeline-title-group">
+                  <h3 class="timeline-role">Data Warehouse Analyst / Data Analyst I–II</h3>
+                  <p class="timeline-company">Ardent Health Services &amp; Healthspring Inc.</p>
+                </div>
+                <div class="timeline-meta">
+                  <span class="timeline-location">Nashville, TN</span>
+                  <span class="timeline-dates">Oct 2006 – Oct 2012</span>
+                </div>
+              </div>
+              <ul class="timeline-bullets">
+                <li>Supported healthcare data warehouse development and health plan analytics using Oracle, SQL Server, SAS, Business Objects, and SSRS across hospital and payer environments.</li>
+                <li>Designed Business Objects Universes, dashboards, SharePoint scorecards, and HEDIS reporting solutions for health plan and hospital departments.</li>
+                <li>Collaborated with the Special Investigation Unit to identify medical fraud, abuse, and claims overpayments — contributing to measurable recovery of overpaid claims.</li>
+              </ul>
+              <div class="timeline-tech">
+                <span>Oracle</span><span>SQL Server</span><span>SAS</span><span>Business Objects</span><span>HEDIS</span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════
+         CERTIFICATIONS
+    ════════════════════════════════════════════════════ -->
+    <section id="certifications" class="section certs-section" aria-labelledby="certs-heading">
+      <div class="container">
+        <div class="section-header reveal-up">
+          <span class="section-eyebrow">Credentials</span>
+          <h2 id="certs-heading" class="section-title">Certifications &amp; Education</h2>
+        </div>
+
+        <div class="certs-grid">
+          <div class="cert-card glass-card tilt-card reveal-up delay-1" tabindex="0">
+            <div class="cert-badge databricks" aria-hidden="true">DB</div>
+            <div class="cert-info">
+              <h3 class="cert-name">Databricks Certified Data Analyst Associate</h3>
+              <p class="cert-issuer">Databricks</p>
+              <p class="cert-date">Aug 2024</p>
+            </div>
+            <div class="cert-ribbon" aria-hidden="true">Active</div>
+          </div>
+          <div class="cert-card glass-card tilt-card reveal-up delay-2" tabindex="0">
+            <div class="cert-badge tableau" aria-hidden="true">TBL</div>
+            <div class="cert-info">
+              <h3 class="cert-name">Tableau Desktop Specialist</h3>
+              <p class="cert-issuer">Tableau / Salesforce</p>
+              <p class="cert-date">Jul 2024</p>
+            </div>
+            <div class="cert-ribbon" aria-hidden="true">Active</div>
+          </div>
+          <div class="cert-card glass-card tilt-card reveal-up delay-3" tabindex="0">
+            <div class="cert-badge snowflake" aria-hidden="true">❄</div>
+            <div class="cert-info">
+              <h3 class="cert-name">SnowPro Core Certification</h3>
+              <p class="cert-issuer">Snowflake</p>
+              <p class="cert-date">May 2026</p>
+            </div>
+            <div class="cert-ribbon" aria-hidden="true">Active</div>
+          </div>
+          <div class="cert-card glass-card tilt-card reveal-up delay-4" tabindex="0">
+            <div class="cert-badge microsoft" aria-hidden="true">MS</div>
+            <div class="cert-info">
+              <h3 class="cert-name">Microsoft Certified: AI Business Professional</h3>
+              <p class="cert-issuer">Microsoft</p>
+              <p class="cert-date">May 2026</p>
+            </div>
+            <div class="cert-ribbon" aria-hidden="true">Active</div>
+          </div>
+        </div>
+
+        <h3 class="subsection-title reveal-up">University Certificates</h3>
+        <div class="university-certs reveal-up">
+          <div class="uni-cert">
+            <span class="uni-name">Stanford University</span>
+            <span class="uni-cert-name">Certificate in AI in Healthcare (2026)</span>
+          </div>
+          <div class="uni-cert">
+            <span class="uni-name">Vanderbilt University</span>
+            <span class="uni-cert-name">Generative AI Data Analyst Specialization (2026)</span>
+          </div>
+          <div class="uni-cert">
+            <span class="uni-name">Johns Hopkins University</span>
+            <span class="uni-cert-name">Social &amp; Technical Context of Health Informatics (2026)</span>
+          </div>
+          <div class="uni-cert">
+            <span class="uni-name">University of Louisville</span>
+            <span class="uni-cert-name">Bachelor of Arts in Political Science</span>
+          </div>
+        </div>
+
+        <h3 class="subsection-title reveal-up">Professional Development</h3>
+        <div class="pd-scroll-wrap reveal-up">
+          <div class="pd-scroll-track" role="list">
+            <div class="pd-item" role="listitem"><span class="pd-org">Stanford</span><span class="pd-title">AI in Healthcare Capstone</span></div>
+            <div class="pd-item" role="listitem"><span class="pd-org">Stanford</span><span class="pd-title">ML for Healthcare</span></div>
+            <div class="pd-item" role="listitem"><span class="pd-org">Stanford</span><span class="pd-title">Clinical Data Introduction</span></div>
+            <div class="pd-item" role="listitem"><span class="pd-org">Stanford</span><span class="pd-title">Evaluations of AI in Healthcare</span></div>
+            <div class="pd-item" role="listitem"><span class="pd-org">Stanford</span><span class="pd-title">Health Informatics Context</span></div>
+            <div class="pd-item" role="listitem"><span class="pd-org">Google</span><span class="pd-title">Generative AI for Healthcare</span></div>
+            <div class="pd-item" role="listitem"><span class="pd-org">Databricks</span><span class="pd-title">GenAI Fundamentals Accreditation</span></div>
+            <div class="pd-item" role="listitem"><span class="pd-org">Databricks</span><span class="pd-title">Lakehouse Fundamentals</span></div>
+            <div class="pd-item" role="listitem"><span class="pd-org">Databricks</span><span class="pd-title">Real-World Data Engineering</span></div>
+            <div class="pd-item" role="listitem"><span class="pd-org">AWS</span><span class="pd-title">Cloud Practitioner Essentials</span></div>
+            <div class="pd-item" role="listitem"><span class="pd-org">AWS</span><span class="pd-title">AWS Technical Essentials</span></div>
+            <div class="pd-item" role="listitem"><span class="pd-org">DeepLearning.AI</span><span class="pd-title">AI Prompting for Everyone</span></div>
+            <div class="pd-item" role="listitem"><span class="pd-org">Microsoft</span><span class="pd-title">Fundamental AI Concepts</span></div>
+            <div class="pd-item" role="listitem"><span class="pd-org">Alation</span><span class="pd-title">Data Governance Advocate</span></div>
+            <div class="pd-item" role="listitem"><span class="pd-org">Alation</span><span class="pd-title">Data Analyst Advocate</span></div>
+            <div class="pd-item" role="listitem"><span class="pd-org">LinkedIn</span><span class="pd-title">AI with Cursor Acceleration</span></div>
+            <div class="pd-item" role="listitem"><span class="pd-org">SkillUp</span><span class="pd-title">FWA in Healthcare</span></div>
+            <div class="pd-item" role="listitem"><span class="pd-org">U of Houston</span><span class="pd-title">Value-Based Care Intro</span></div>
+            <div class="pd-item" role="listitem"><span class="pd-org">Cognitive Class</span><span class="pd-title">Data Analysis with Python</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════
+         FEATURED PROJECTS
+    ════════════════════════════════════════════════════ -->
+    <section id="projects" class="section projects-section" aria-labelledby="projects-heading">
+      <div class="container">
+        <div class="section-header reveal-up">
+          <span class="section-eyebrow">Portfolio</span>
+          <h2 id="projects-heading" class="section-title">Featured Projects</h2>
+          <p class="section-subtitle">Production-oriented analytics and AI projects spanning real-world healthcare use cases.</p>
+        </div>
+        <div class="projects-grid">
+
+          <article class="project-card glass-card tilt-card reveal-up delay-1" tabindex="0">
+            <div class="project-accent" style="--accent: var(--cyan);" aria-hidden="true"></div>
+            <div class="project-header">
+              <div class="project-icon" aria-hidden="true">🏥</div>
+              <div class="project-status">Healthcare AI</div>
+            </div>
+            <h3 class="project-title">Clinical NLP Triage Engine</h3>
+            <p class="project-desc">AI-powered triage system using natural language processing to classify and route clinical notes, reducing manual review time and improving case prioritization accuracy across healthcare workflows.</p>
+            <div class="project-stack"><span>Python</span><span>NLP</span><span>Databricks</span><span>Streamlit</span></div>
+            <a href="https://github.com/Albano-Portfolio" class="project-link" target="_blank" rel="noopener noreferrer">View on GitHub <span aria-hidden="true">→</span></a>
+          </article>
+
+          <article class="project-card glass-card tilt-card reveal-up delay-2" tabindex="0">
+            <div class="project-accent" style="--accent: var(--amber);" aria-hidden="true"></div>
+            <div class="project-header">
+              <div class="project-icon" aria-hidden="true">📉</div>
+              <div class="project-status">Predictive Analytics</div>
+            </div>
+            <h3 class="project-title">Readmission Risk Scoring Model</h3>
+            <p class="project-desc">Predictive analytics model identifying high-risk patients for 30-day hospital readmission, enabling proactive care management interventions and supporting value-based care reporting.</p>
+            <div class="project-stack"><span>Python</span><span>ML</span><span>SQL</span><span>Databricks</span></div>
+            <a href="https://github.com/Albano-Portfolio" class="project-link" target="_blank" rel="noopener noreferrer">View on GitHub <span aria-hidden="true">→</span></a>
+          </article>
+
+          <article class="project-card glass-card tilt-card reveal-up delay-3" tabindex="0">
+            <div class="project-accent" style="--accent: var(--teal);" aria-hidden="true"></div>
+            <div class="project-header">
+              <div class="project-icon" aria-hidden="true">🔎</div>
+              <div class="project-status">Claims Integrity</div>
+            </div>
+            <h3 class="project-title">Claims Anomaly Detection Dashboard</h3>
+            <p class="project-desc">Real-time claims anomaly detection system surfacing billing irregularities, outlier providers, and potential fraud patterns across multi-payer claims data with interactive Power BI dashboards.</p>
+            <div class="project-stack"><span>SQL</span><span>Power BI</span><span>Python</span><span>Databricks</span></div>
+            <a href="https://github.com/Albano-Portfolio" class="project-link" target="_blank" rel="noopener noreferrer">View on GitHub <span aria-hidden="true">→</span></a>
+          </article>
+
+          <article class="project-card glass-card tilt-card reveal-up delay-4" tabindex="0">
+            <div class="project-accent" style="--accent: #9b5de5;" aria-hidden="true"></div>
+            <div class="project-header">
+              <div class="project-icon" aria-hidden="true">⚡</div>
+              <div class="project-status">AI Automation</div>
+            </div>
+            <h3 class="project-title">Prior Authorization AI Automation</h3>
+            <p class="project-desc">AI-assisted prior authorization processing pipeline using LLM prompt engineering and Databricks Genie to automate documentation review, criteria matching, and decision workflow routing.</p>
+            <div class="project-stack"><span>Databricks Genie</span><span>LLM</span><span>Python</span><span>Automation</span></div>
+            <a href="https://github.com/Albano-Portfolio" class="project-link" target="_blank" rel="noopener noreferrer">View on GitHub <span aria-hidden="true">→</span></a>
+          </article>
+
+          <article class="project-card glass-card tilt-card reveal-up delay-5" tabindex="0">
+            <div class="project-accent" style="--accent: #f72585;" aria-hidden="true"></div>
+            <div class="project-header">
+              <div class="project-icon" aria-hidden="true">🗺️</div>
+              <div class="project-status">Population Health</div>
+            </div>
+            <h3 class="project-title">SDOH Risk Dashboard Suite</h3>
+            <p class="project-desc">Social Determinants of Health risk stratification dashboard integrating claims, demographic, and community-level data to surface equity gaps and support targeted population health programs.</p>
+            <div class="project-stack"><span>Tableau</span><span>SQL</span><span>Python</span><span>SDOH Data</span></div>
+            <a href="https://github.com/Albano-Portfolio" class="project-link" target="_blank" rel="noopener noreferrer">View on GitHub <span aria-hidden="true">→</span></a>
+          </article>
+
+          <article class="project-card glass-card tilt-card reveal-up delay-6" tabindex="0">
+            <div class="project-accent" style="--accent: var(--cyan);" aria-hidden="true"></div>
+            <div class="project-header">
+              <div class="project-icon" aria-hidden="true">🚀</div>
+              <div class="project-status">Open Source</div>
+            </div>
+            <h3 class="project-title">Healthcare AI Portfolio Suite</h3>
+            <p class="project-desc">Five production-ready Streamlit and AI agent applications targeting real healthcare analytics use cases — demonstrating end-to-end AI and data engineering capability across the full healthcare data lifecycle.</p>
+            <div class="project-stack"><span>Streamlit</span><span>Python</span><span>AI Agents</span><span>GitHub</span></div>
+            <a href="https://github.com/Albano-Portfolio" class="project-link" target="_blank" rel="noopener noreferrer">View on GitHub <span aria-hidden="true">→</span></a>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════
+         TOOLS & TECHNOLOGIES
+    ════════════════════════════════════════════════════ -->
+    <section id="tools" class="section tools-section" aria-labelledby="tools-heading">
+      <div class="container">
+        <div class="section-header reveal-up">
+          <span class="section-eyebrow">Tech Stack</span>
+          <h2 id="tools-heading" class="section-title">Tools &amp; Technologies</h2>
+        </div>
+        <div class="tools-grid">
+
+          <div class="tool-group reveal-up delay-1">
+            <h3 class="tool-group-title">Data &amp; Analytics Platforms</h3>
+            <div class="tool-list">
+              <div class="tool-item" data-tip="Primary analytics platform"><span class="tool-dot cyan"></span> Databricks</div>
+              <div class="tool-item" data-tip="Cloud data warehousing"><span class="tool-dot cyan"></span> Snowflake</div>
+              <div class="tool-item" data-tip="Statistical analysis &amp; programming"><span class="tool-dot cyan"></span> SAS</div>
+              <div class="tool-item" data-tip="Legacy healthcare data systems"><span class="tool-dot cyan"></span> Oracle</div>
+              <div class="tool-item" data-tip="Enterprise RDBMS"><span class="tool-dot cyan"></span> SQL Server</div>
+              <div class="tool-item" data-tip="Data catalog &amp; governance"><span class="tool-dot cyan"></span> Alation</div>
+            </div>
+          </div>
+
+          <div class="tool-group reveal-up delay-2">
+            <h3 class="tool-group-title">BI &amp; Visualization</h3>
+            <div class="tool-list">
+              <div class="tool-item" data-tip="Certified Desktop Specialist"><span class="tool-dot amber"></span> Tableau</div>
+              <div class="tool-item" data-tip="Microsoft enterprise BI"><span class="tool-dot amber"></span> Power BI</div>
+              <div class="tool-item" data-tip="Google / Looker Studio"><span class="tool-dot amber"></span> Looker</div>
+              <div class="tool-item" data-tip="Microsoft reporting services"><span class="tool-dot amber"></span> SSRS</div>
+              <div class="tool-item" data-tip="Analytical workbench platform"><span class="tool-dot amber"></span> Altair Analytics WB</div>
+              <div class="tool-item" data-tip="SAP legacy BI platform"><span class="tool-dot amber"></span> Business Objects</div>
+            </div>
+          </div>
+
+          <div class="tool-group reveal-up delay-3">
+            <h3 class="tool-group-title">Languages &amp; Code</h3>
+            <div class="tool-list">
+              <div class="tool-item" data-tip="Advanced queries, stored procs, DW"><span class="tool-dot teal"></span> SQL (Advanced)</div>
+              <div class="tool-item" data-tip="Data engineering, ML, automation"><span class="tool-dot teal"></span> Python</div>
+              <div class="tool-item" data-tip="Healthcare data analysis &amp; stats"><span class="tool-dot teal"></span> SAS Programming</div>
+              <div class="tool-item" data-tip="Legacy productivity automation"><span class="tool-dot teal"></span> VBA</div>
+              <div class="tool-item" data-tip="Cube &amp; OLAP development"><span class="tool-dot teal"></span> MDX (SSAS)</div>
+            </div>
+          </div>
+
+          <div class="tool-group reveal-up delay-4">
+            <h3 class="tool-group-title">AI &amp; Emerging Tech</h3>
+            <div class="tool-list">
+              <div class="tool-item" data-tip="Natural language SQL on Databricks"><span class="tool-dot purple"></span> Databricks Genie</div>
+              <div class="tool-item" data-tip="AI-assisted productivity &amp; coding"><span class="tool-dot purple"></span> Microsoft Copilot</div>
+              <div class="tool-item" data-tip="AI-powered coding assistant"><span class="tool-dot purple"></span> Cursor AI</div>
+              <div class="tool-item" data-tip="LLM &amp; generative AI design"><span class="tool-dot purple"></span> Prompt Engineering</div>
+              <div class="tool-item" data-tip="Stanford AI in Healthcare certified"><span class="tool-dot purple"></span> AI in Healthcare</div>
+              <div class="tool-item" data-tip="Vanderbilt GenAI certified"><span class="tool-dot purple"></span> Generative AI</div>
+            </div>
+          </div>
+
+          <div class="tool-group reveal-up delay-5">
+            <h3 class="tool-group-title">Cloud &amp; Infrastructure</h3>
+            <div class="tool-list">
+              <div class="tool-item" data-tip="Lakehouse analytics platform"><span class="tool-dot cyan"></span> Databricks Lakehouse</div>
+              <div class="tool-item" data-tip="AWS essentials certified"><span class="tool-dot cyan"></span> Amazon Web Services</div>
+              <div class="tool-item" data-tip="Enterprise collaboration &amp; portals"><span class="tool-dot cyan"></span> SharePoint / M365</div>
+              <div class="tool-item" data-tip="Source control &amp; version management"><span class="tool-dot cyan"></span> Git / GitHub</div>
+            </div>
+          </div>
+
+          <div class="tool-group reveal-up delay-6">
+            <h3 class="tool-group-title">Healthcare Systems</h3>
+            <div class="tool-list">
+              <div class="tool-item" data-tip="Medical claims processing platforms"><span class="tool-dot amber"></span> Claims Systems (Facets, Trizetto)</div>
+              <div class="tool-item" data-tip="Quality measure reporting"><span class="tool-dot amber"></span> HEDIS Reporting</div>
+              <div class="tool-item" data-tip="Centers for Medicare &amp; Medicaid"><span class="tool-dot amber"></span> CMS Reporting</div>
+              <div class="tool-item" data-tip="Pharmacy benefit management"><span class="tool-dot amber"></span> Express Scripts / PBM</div>
+              <div class="tool-item" data-tip="Drug &amp; pharmacy data analytics"><span class="tool-dot amber"></span> Drug/Rx Analytics</div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════
+         RESUME DOWNLOAD
+    ════════════════════════════════════════════════════ -->
+    <section id="resume-download" class="section resume-section" aria-labelledby="resume-heading">
+      <div class="container">
+        <div class="resume-banner glass-card reveal-up">
+          <div class="resume-glow" aria-hidden="true"></div>
+          <div class="resume-content">
+            <h2 id="resume-heading" class="resume-title">Ready to explore opportunities?</h2>
+            <p class="resume-subtitle">
+              Download my full resume for a complete view of my 18+ years in healthcare analytics,
+              AI-enabled reporting, and enterprise BI — or reach out directly.
+            </p>
+            <div class="resume-ctas">
+              <a href="Jason_Albano_Resume.pdf" class="btn btn-primary btn-large" download="Jason_Albano_Resume.pdf" id="resumeDownloadBtn">
+                ⬇ Download Resume (PDF)
+              </a>
+              <a href="#contact" class="btn btn-outline btn-large">Get In Touch</a>
+            </div>
+            <p class="resume-note" id="resumeNote" style="display:none; margin-top:0.75rem; font-size:0.82rem; color:var(--amber);">
+              PDF not found — email <a href="mailto:Japi782004@yahoo.com" style="color:var(--cyan);">Japi782004@yahoo.com</a> to request a copy.
+            </p>
+          </div>
+          <div class="resume-decoration" aria-hidden="true">
+            <div class="deco-circle c1"></div>
+            <div class="deco-circle c2"></div>
+            <div class="deco-circle c3"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════
+         CONTACT
+    ════════════════════════════════════════════════════ -->
+    <section id="contact" class="section contact-section" aria-labelledby="contact-heading">
+      <div class="container">
+        <div class="section-header reveal-up">
+          <span class="section-eyebrow">Let's Connect</span>
+          <h2 id="contact-heading" class="section-title">Get In Touch</h2>
+          <p class="section-subtitle">Open to new opportunities, collaborations, and conversations about healthcare analytics and AI.</p>
+        </div>
+        <div class="contact-grid">
+
+          <div class="contact-info reveal-left">
+            <div class="contact-item">
+              <span class="contact-icon" aria-hidden="true">📧</span>
+              <div>
+                <p class="contact-label">Email</p>
+                <a href="mailto:Japi782004@yahoo.com" class="contact-value">Japi782004@yahoo.com</a>
+              </div>
+            </div>
+            <div class="contact-item">
+              <span class="contact-icon" aria-hidden="true">📍</span>
+              <div>
+                <p class="contact-label">Location</p>
+                <p class="contact-value">Nashville, TN (Open to Remote)</p>
+              </div>
+            </div>
+            <div class="contact-item">
+              <span class="contact-icon" aria-hidden="true">📞</span>
+              <div>
+                <p class="contact-label">Phone</p>
+                <a href="tel:6155981794" class="contact-value">615.598.1794</a>
+              </div>
+            </div>
+            <div class="social-links">
+              <a href="https://www.linkedin.com/in/jasonalbano/" class="social-btn" aria-label="Visit LinkedIn profile" target="_blank" rel="noopener noreferrer">
+                <span class="social-icon">in</span>
+                <span>LinkedIn</span>
+              </a>
+              <a href="https://github.com/Albano-Portfolio" class="social-btn" aria-label="Visit GitHub profile" target="_blank" rel="noopener noreferrer">
+                <span class="social-icon">gh</span>
+                <span>GitHub</span>
+              </a>
+            </div>
+          </div>
+
+          <div class="contact-form-wrap reveal-right">
+            <form class="contact-form glass-card" id="contactForm" novalidate aria-label="Contact form">
+              <div class="form-group">
+                <label for="contactName" class="form-label">Name</label>
+                <input type="text" id="contactName" name="name" class="form-input" placeholder="Your name" required autocomplete="name" />
+              </div>
+              <div class="form-group">
+                <label for="contactEmail" class="form-label">Email</label>
+                <input type="email" id="contactEmail" name="email" class="form-input" placeholder="your@email.com" required autocomplete="email" />
+              </div>
+              <div class="form-group">
+                <label for="contactMessage" class="form-label">Message</label>
+                <textarea id="contactMessage" name="message" class="form-input form-textarea" placeholder="Your message..." rows="5" required></textarea>
+              </div>
+              <button type="submit" class="btn btn-primary btn-full" id="submitBtn">Send Message</button>
+              <p style="font-size:0.75rem; color:var(--text-dim); text-align:center; margin-top:0.75rem;">Opens your email client with your message pre-filled.</p>
+            </form>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="footer" role="contentinfo">
+    <div class="container footer-inner">
+      <p class="footer-copy">© 2026 Jason L. Albano · Senior AI-Enabled Healthcare Data Analyst · Nashville, TN</p>
+      <p class="footer-built">Built with ❤ and 18+ years of healthcare data expertise</p>
+    </div>
+  </footer>
+
+  <button class="back-to-top" id="backToTop" aria-label="Scroll back to top">↑</button>
+  <script>
+/* ================================================================
+   JASON L. ALBANO — Senior AI-Enabled Healthcare Data Analyst
+   script.js
+
+   SPECIAL EFFECTS:
+   1.  Theme Toggle
+   2.  Navigation (sticky + hamburger + active links)
+   3.  Typewriter (hero subtitle)
+   4.  Neural Network Canvas (hero background)
+   5.  Data Streams (matrix-style falling columns, global)
+   6.  Floating Metric Chips (drift upward across screen)
+   7.  AI Pipeline Canvas (about section visual)
+   8.  Stat Counter Animations (hero numbers count up)
+   9.  3D Tilt Cards (mouse-tracking on all .tilt-card elements)
+   10. Scroll Reveal Animations
+   11. Back to Top button
+   12. Contact Form (mailto handler)
+   13. Resume Download fallback
+   14. PD Scroll drag-to-scroll
+   15. Tool Tooltips
+================================================================ */
+
+document.addEventListener('DOMContentLoaded', () => {
+
+/* ─── 1. THEME TOGGLE ─────────────────────────────────────────── */
+const themeToggle = document.getElementById('themeToggle');
+const html = document.documentElement;
+const saved = localStorage.getItem('portfolio-theme') || 'dark';
+if (saved === 'light') html.setAttribute('data-theme', 'light');
+
+themeToggle.addEventListener('click', () => {
+  const next = html.getAttribute('data-theme') === 'light' ? 'dark' : 'light';
+  html.setAttribute('data-theme', next);
+  localStorage.setItem('portfolio-theme', next);
+});
+
+/* ─── 2. NAVIGATION ───────────────────────────────────────────── */
+const navbar    = document.getElementById('navbar');
+const hamburger = document.getElementById('navHamburger');
+const mobileMenu = document.getElementById('mobileMenu');
+const navLinks  = document.querySelectorAll('.nav-link');
+
+window.addEventListener('scroll', () => {
+  navbar.classList.toggle('scrolled', window.scrollY > 50);
+  document.getElementById('backToTop').classList.toggle('visible', window.scrollY > 500);
+}, { passive: true });
+
+hamburger.addEventListener('click', () => {
+  const open = mobileMenu.classList.toggle('open');
+  hamburger.setAttribute('aria-expanded', open);
+  mobileMenu.setAttribute('aria-hidden', !open);
+});
+document.querySelectorAll('.mobile-link').forEach(l => l.addEventListener('click', () => {
+  mobileMenu.classList.remove('open');
+  hamburger.setAttribute('aria-expanded', 'false');
+  mobileMenu.setAttribute('aria-hidden', 'true');
+}));
+document.addEventListener('keydown', e => {
+  if (e.key === 'Escape' && mobileMenu.classList.contains('open')) {
+    mobileMenu.classList.remove('open');
+    hamburger.setAttribute('aria-expanded', 'false');
+    mobileMenu.setAttribute('aria-hidden', 'true');
+    hamburger.focus();
+  }
+});
+
+// Active nav link tracking
+const sections = document.querySelectorAll('section[id]');
+function updateActiveNav() {
+  const pos = window.scrollY + 120;
+  sections.forEach(s => {
+    if (pos >= s.offsetTop && pos < s.offsetTop + s.offsetHeight) {
+      navLinks.forEach(l => {
+        l.classList.toggle('active', l.getAttribute('href') === `#${s.id}`);
+      });
+    }
+  });
+}
+window.addEventListener('scroll', updateActiveNav, { passive: true });
+updateActiveNav();
+
+// Smooth anchor scroll with navbar offset
+const NAV_OFFSET = 80;
+document.querySelectorAll('a[href^="#"]').forEach(a => {
+  a.addEventListener('click', e => {
+    const t = document.querySelector(a.getAttribute('href'));
+    if (!t || a.getAttribute('href') === '#') return;
+    e.preventDefault();
+    window.scrollTo({ top: t.getBoundingClientRect().top + window.scrollY - NAV_OFFSET, behavior: 'smooth' });
+  });
+});
+
+document.getElementById('backToTop').addEventListener('click', () =>
+  window.scrollTo({ top: 0, behavior: 'smooth' })
+);
+
+/* ─── 3. TYPEWRITER ───────────────────────────────────────────── */
+const twEl = document.getElementById('typewriterText');
+const phrases = [
+  'Healthcare Data Analyst',
+  'AI Analytics Specialist',
+  'Databricks Certified',
+  'Claims Analytics Expert',
+  'Prior Auth AI Automation',
+  'Cost Containment Strategist',
+  'BI & Dashboard Developer',
+  'Prompt Engineering Practitioner',
+  'Stanford AI in Healthcare',
+  'Enterprise BI Leader',
+];
+let pi = 0, ci = 0, del = false, delay = 80;
+
+function type() {
+  const cur = phrases[pi];
+  twEl.textContent = del
+    ? cur.substring(0, ci - 1)
+    : cur.substring(0, ci + 1);
+  del ? ci-- : ci++;
+  if (!del && ci === cur.length) { delay = 2200; del = true; }
+  else if (del && ci === 0)      { del = false; pi = (pi + 1) % phrases.length; delay = 350; }
+  else                            { delay = del ? 38 : 80; }
+  setTimeout(type, delay);
+}
+setTimeout(type, 900);
+
+/* ─── 4. NEURAL NETWORK CANVAS ────────────────────────────────── */
+const nc = document.getElementById('neuralCanvas');
+if (nc) {
+  const ctx = nc.getContext('2d');
+  let nodes = [], raf;
+
+  function resize() {
+    nc.width  = nc.offsetWidth;
+    nc.height = nc.offsetHeight;
+    initNodes();
+  }
+
+  class Node {
+    constructor() { this.reset(true); }
+    reset(init) {
+      this.x  = Math.random() * nc.width;
+      this.y  = init ? Math.random() * nc.height : nc.height + 10;
+      this.vx = (Math.random() - .5) * .35;
+      this.vy = -Math.random() * .4 - .1;
+      this.r  = Math.random() * 2.5 + 1;
+      this.a  = Math.random() * .55 + .1;
+      this.pulse = Math.random() * Math.PI * 2;
+      // color: mix of cyan, teal, purple
+      const c = Math.random();
+      this.color = c < .55 ? '#00D4FF' : c < .8 ? '#00B8A0' : '#9B5DE5';
+    }
+    update() {
+      this.x += this.vx;
+      this.y += this.vy;
+      this.pulse += .025;
+      this.a = .15 + Math.sin(this.pulse) * .12;
+      if (this.y < -10 || this.x < -20 || this.x > nc.width + 20) this.reset(false);
+    }
+    draw() {
+      ctx.save();
+      ctx.globalAlpha = this.a;
+      ctx.fillStyle   = this.color;
+      ctx.shadowColor = this.color;
+      ctx.shadowBlur  = 6;
+      ctx.beginPath();
+      ctx.arc(this.x, this.y, this.r, 0, Math.PI * 2);
+      ctx.fill();
+      ctx.restore();
+    }
+  }
+
+  function initNodes() {
+    nodes = [];
+    const n = Math.max(40, Math.floor(nc.width * nc.height / 9000));
+    for (let i = 0; i < n; i++) nodes.push(new Node());
+  }
+
+  function drawEdges() {
+    for (let i = 0; i < nodes.length; i++) {
+      for (let j = i + 1; j < nodes.length; j++) {
+        const dx = nodes[i].x - nodes[j].x;
+        const dy = nodes[i].y - nodes[j].y;
+        const d  = Math.sqrt(dx * dx + dy * dy);
+        if (d < 110) {
+          ctx.save();
+          ctx.globalAlpha = (1 - d / 110) * .07;
+          ctx.strokeStyle = '#00D4FF';
+          ctx.lineWidth   = .8;
+          ctx.beginPath();
+          ctx.moveTo(nodes[i].x, nodes[i].y);
+          ctx.lineTo(nodes[j].x, nodes[j].y);
+          ctx.stroke();
+          ctx.restore();
+        }
+      }
+    }
+  }
+
+  function animate() {
+    ctx.clearRect(0, 0, nc.width, nc.height);
+    drawEdges();
+    nodes.forEach(n => { n.update(); n.draw(); });
+    raf = requestAnimationFrame(animate);
+  }
+
+  resize();
+  animate();
+  window.addEventListener('resize', () => { cancelAnimationFrame(raf); resize(); animate(); });
+}
+
+/* ─── 5. DATA STREAMS (healthcare-themed matrix columns) ─────── */
+const streamWrap = document.getElementById('dataStreams');
+if (streamWrap) {
+  const streamData = [
+    'ICD10','CPT','DRG','HCPCS','NDC','NPI','HEDIS','CLAIMS',
+    'SQL','0x3F','REGEX','JOIN','QUERY','INDEX','VIEW','PROC',
+    '0.974','0.882','0.997','0.741','97.4%','88.2%',
+    'AI','LLM','GPT','ML','NLP','RAG','ETL','API',
+    'RX','DX','PX','ER','ICU','CMS','FWA','TMC',
+  ];
+  const cols = Math.floor(window.innerWidth / 22);
+  for (let i = 0; i < cols; i++) {
+    const col = document.createElement('div');
+    col.className = 'data-stream-col';
+    col.style.left = `${i * 22}px`;
+    col.style.animationDuration = `${8 + Math.random() * 14}s`;
+    col.style.animationDelay   = `-${Math.random() * 20}s`;
+    const len = 15 + Math.floor(Math.random() * 20);
+    for (let j = 0; j < len; j++) {
+      const span = document.createElement('span');
+      span.textContent = streamData[Math.floor(Math.random() * streamData.length)];
+      col.appendChild(span);
+    }
+    streamWrap.appendChild(col);
+  }
+}
+
+/* ─── 6. FLOATING METRIC CHIPS ────────────────────────────────── */
+const fmWrap = document.getElementById('floatingMetrics');
+if (fmWrap) {
+  const metrics = [
+    'SQL ▲', 'AI Enabled', 'Claims Analytics', 'Databricks ✓',
+    'HEDIS', 'NLP Active', 'Cost Savings', 'Power BI',
+    'Prior Auth AI', 'TMC Analytics', 'FWA Detection', 'Snowflake ✓',
+    'Tableau ✓', 'Python', 'Prompt Eng.', 'Healthcare AI',
+    'Stanford ✓', 'Gov. Certified', 'Delta Lake', 'GenAI',
+  ];
+
+  function spawnChip() {
+    const chip = document.createElement('div');
+    chip.className = 'float-chip';
+    chip.textContent = metrics[Math.floor(Math.random() * metrics.length)];
+    chip.style.left    = `${5 + Math.random() * 88}vw`;
+    chip.style.bottom  = '-40px';
+    const dur = 18 + Math.random() * 22;
+    chip.style.animationDuration = `${dur}s`;
+    chip.style.animationDelay   = '0s';
+    fmWrap.appendChild(chip);
+    setTimeout(() => chip.remove(), dur * 1000 + 500);
+  }
+
+  // Initial batch
+  for (let i = 0; i < 6; i++) {
+    setTimeout(spawnChip, i * 2000);
+  }
+  setInterval(spawnChip, 3500);
+}
+
+/* ─── 7. AI PIPELINE CANVAS (about section) ──────────────────── */
+const pc = document.getElementById('pipelineCanvas');
+if (pc) {
+  const ctx = pc.getContext('2d');
+  pc.width  = 320;
+  pc.height = 360;
+
+  // Nodes representing the AI data pipeline
+  const pNodes = [
+    { x:160, y:40,  label:'Raw Claims',      color:'#9B5DE5', r:28 },
+    { x:80,  y:120, label:'SQL\nEngine',     color:'#00D4FF', r:24 },
+    { x:240, y:120, label:'Python\nPipeline',color:'#00B8A0', r:24 },
+    { x:160, y:200, label:'Databricks\nGenie',color:'#F5A623',r:28 },
+    { x:80,  y:290, label:'BI\nDashboard',   color:'#00D4FF', r:22 },
+    { x:240, y:290, label:'AI\nInsights',    color:'#9B5DE5', r:22 },
+  ];
+
+  // Connections
+  const edges = [
+    [0,1],[0,2],[1,3],[2,3],[3,4],[3,5]
+  ];
+
+  // Animated particles travelling along edges
+  const particles = [];
+  edges.forEach(([a,b]) => {
+    for (let i = 0; i < 2; i++) {
+      particles.push({
+        a, b,
+        t: Math.random(),
+        speed: .003 + Math.random() * .004,
+        color: ['#00D4FF','#00B8A0','#9B5DE5','#F5A623'][Math.floor(Math.random()*4)]
+      });
+    }
+  });
+
+  let tick = 0;
+
+  function drawPipeline() {
+    ctx.clearRect(0, 0, 320, 360);
+    tick++;
+
+    // Draw edges
+    edges.forEach(([a, b]) => {
+      const na = pNodes[a], nb = pNodes[b];
+      const grad = ctx.createLinearGradient(na.x, na.y, nb.x, nb.y);
+      grad.addColorStop(0, na.color + '40');
+      grad.addColorStop(1, nb.color + '40');
+      ctx.save();
+      ctx.strokeStyle = grad;
+      ctx.lineWidth   = 1.5;
+      ctx.setLineDash([4, 4]);
+      ctx.lineDashOffset = -tick * .5;
+      ctx.beginPath();
+      ctx.moveTo(na.x, na.y);
+      ctx.lineTo(nb.x, nb.y);
+      ctx.stroke();
+      ctx.setLineDash([]);
+      ctx.restore();
+    });
+
+    // Draw particles
+    particles.forEach(p => {
+      p.t = (p.t + p.speed) % 1;
+      const na = pNodes[p.a], nb = pNodes[p.b];
+      const x = na.x + (nb.x - na.x) * p.t;
+      const y = na.y + (nb.y - na.y) * p.t;
+      ctx.save();
+      ctx.fillStyle   = p.color;
+      ctx.shadowColor = p.color;
+      ctx.shadowBlur  = 8;
+      ctx.globalAlpha = .9;
+      ctx.beginPath();
+      ctx.arc(x, y, 3, 0, Math.PI * 2);
+      ctx.fill();
+      ctx.restore();
+    });
+
+    // Draw nodes
+    pNodes.forEach((n, i) => {
+      const pulse = Math.sin(tick * .04 + i * .9) * .08 + .92;
+      const r = n.r * pulse;
+
+      // glow ring
+      ctx.save();
+      ctx.strokeStyle = n.color;
+      ctx.lineWidth   = 1;
+      ctx.globalAlpha = .2 + Math.sin(tick * .05 + i) * .08;
+      ctx.shadowColor = n.color;
+      ctx.shadowBlur  = 14;
+      ctx.beginPath();
+      ctx.arc(n.x, n.y, r + 8, 0, Math.PI * 2);
+      ctx.stroke();
+      ctx.restore();
+
+      // node fill
+      ctx.save();
+      const g = ctx.createRadialGradient(n.x - r*.3, n.y - r*.3, r*.1, n.x, n.y, r);
+      g.addColorStop(0, n.color + 'CC');
+      g.addColorStop(1, n.color + '22');
+      ctx.fillStyle   = g;
+      ctx.strokeStyle = n.color;
+      ctx.lineWidth   = 1.5;
+      ctx.globalAlpha = .9;
+      ctx.beginPath();
+      ctx.arc(n.x, n.y, r, 0, Math.PI * 2);
+      ctx.fill();
+      ctx.stroke();
+      ctx.restore();
+
+      // label
+      ctx.save();
+      ctx.fillStyle   = '#E8EDF5';
+      ctx.font        = `bold ${n.r > 25 ? 9 : 8}px 'JetBrains Mono', monospace`;
+      ctx.textAlign   = 'center';
+      ctx.textBaseline= 'middle';
+      ctx.globalAlpha = .95;
+      const lines = n.label.split('\n');
+      lines.forEach((line, li) => {
+        ctx.fillText(line, n.x, n.y + (li - (lines.length-1)/2) * 11);
+      });
+      ctx.restore();
+    });
+
+    requestAnimationFrame(drawPipeline);
+  }
+
+  // Animate the live counter chips in about section
+  let claimsCount = 48204;
+  setInterval(() => {
+    claimsCount += Math.floor(Math.random() * 12 + 3);
+    const el = document.getElementById('claimsVal');
+    if (el) el.textContent = claimsCount.toLocaleString();
+  }, 1200);
+
+  let accuracy = 97.4;
+  setInterval(() => {
+    accuracy = 96.8 + Math.random() * 1.4;
+    const el = document.getElementById('accuracyVal');
+    if (el) el.textContent = accuracy.toFixed(1) + '%';
+  }, 3000);
+
+  drawPipeline();
+}
+
+/* ─── 8. STAT COUNTER ANIMATIONS ─────────────────────────────── */
+const statNumbers = document.querySelectorAll('.stat-number[data-target]');
+
+function animateCounter(el, target, duration = 1800) {
+  const start = performance.now();
+  function tick(now) {
+    const t = Math.min((now - start) / duration, 1);
+    const ease = 1 - Math.pow(1 - t, 3); // cubic ease-out
+    el.textContent = Math.floor(ease * target);
+    if (t < 1) requestAnimationFrame(tick);
+    else el.textContent = target;
+  }
+  requestAnimationFrame(tick);
+}
+
+// Trigger counters when hero stats scroll into view
+const statsObs = new IntersectionObserver(entries => {
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      statNumbers.forEach(el => {
+        animateCounter(el, parseInt(el.dataset.target));
+      });
+      statsObs.disconnect();
+    }
+  });
+}, { threshold: .5 });
+
+const statsEl = document.querySelector('.hero-stats');
+if (statsEl) statsObs.observe(statsEl);
+
+/* ─── 9. 3D TILT CARDS ────────────────────────────────────────── */
+const tiltCards = document.querySelectorAll('.tilt-card');
+
+// Inject shine div into each tilt card
+tiltCards.forEach(card => {
+  // Only add if not already present
+  if (!card.querySelector('.tilt-shine')) {
+    const shine = document.createElement('div');
+    shine.className = 'tilt-shine';
+    card.style.position = 'relative';
+    card.appendChild(shine);
+  }
+});
+
+function applyTilt(card, e) {
+  const rect = card.getBoundingClientRect();
+  const cx   = rect.left + rect.width / 2;
+  const cy   = rect.top  + rect.height / 2;
+  const dx   = (e.clientX - cx) / (rect.width  / 2);
+  const dy   = (e.clientY - cy) / (rect.height / 2);
+
+  const rotX = dy * -7;  // degrees
+  const rotY = dx *  7;
+
+  card.style.transform = `perspective(800px) rotateX(${rotX}deg) rotateY(${rotY}deg) scale(1.025)`;
+  card.style.boxShadow = `${-dx * 10}px ${-dy * 10}px 30px rgba(0,212,255,0.10)`;
+
+  // Update shine position via CSS vars
+  const mx = ((e.clientX - rect.left) / rect.width  * 100).toFixed(1);
+  const my = ((e.clientY - rect.top)  / rect.height * 100).toFixed(1);
+  card.style.setProperty('--mx', `${mx}%`);
+  card.style.setProperty('--my', `${my}%`);
+}
+
+function resetTilt(card) {
+  card.style.transform  = '';
+  card.style.boxShadow  = '';
+}
+
+tiltCards.forEach(card => {
+  card.addEventListener('mousemove', e => applyTilt(card, e));
+  card.addEventListener('mouseleave', () => resetTilt(card));
+  // Disable tilt on touch devices
+  card.addEventListener('touchstart', () => resetTilt(card), { passive: true });
+});
+
+/* ─── 10. SCROLL REVEAL ANIMATIONS ───────────────────────────── */
+const revealEls = document.querySelectorAll('.reveal-up,.reveal-left,.reveal-right');
+
+if ('IntersectionObserver' in window) {
+  const obs = new IntersectionObserver(entries => {
+    entries.forEach(e => {
+      if (e.isIntersecting) { e.target.classList.add('revealed'); obs.unobserve(e.target); }
+    });
+  }, { threshold: .10, rootMargin: '0px 0px -50px 0px' });
+  revealEls.forEach(el => obs.observe(el));
+} else {
+  revealEls.forEach(el => el.classList.add('revealed'));
+}
+
+/* ─── Skill tag pop-in ─── */
+const skillCats = document.querySelectorAll('.skill-category');
+const tagStyle = document.createElement('style');
+tagStyle.textContent = `
+  @keyframes tagPop{0%{opacity:0;transform:scale(.8) translateY(6px)}60%{transform:scale(1.06) translateY(-1px)}100%{opacity:1;transform:scale(1) translateY(0)}}
+  .tag-pop{animation:tagPop .4s ease forwards;opacity:0}
+`;
+document.head.appendChild(tagStyle);
+
+if ('IntersectionObserver' in window) {
+  const sObs = new IntersectionObserver(entries => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.querySelectorAll('.skill-tag').forEach((tag, i) => {
+          tag.style.animationDelay = `${i * .055}s`;
+          tag.classList.add('tag-pop');
+        });
+        sObs.unobserve(e.target);
+      }
+    });
+  }, { threshold: .2 });
+  skillCats.forEach(c => sObs.observe(c));
+}
+
+/* ─── 11. BACK TO TOP handled inline in nav scroll listener ───── */
+
+/* ─── 12. CONTACT FORM — mailto handler ──────────────────────── */
+const contactForm = document.getElementById('contactForm');
+const submitBtn   = document.getElementById('submitBtn');
+
+if (contactForm) {
+  contactForm.addEventListener('submit', e => {
+    e.preventDefault();
+    const name    = document.getElementById('contactName').value.trim();
+    const email   = document.getElementById('contactEmail').value.trim();
+    const message = document.getElementById('contactMessage').value.trim();
+
+    if (!name || !email || !message) { alert('Please fill in all fields.'); return; }
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) { alert('Please enter a valid email.'); return; }
+
+    const subject = encodeURIComponent(`Portfolio Inquiry from ${name}`);
+    const body    = encodeURIComponent(`Hi Jason,\n\nMy name is ${name} and my email is ${email}.\n\n${message}\n\nBest regards,\n${name}`);
+    window.location.href = `mailto:Japi782004@yahoo.com?subject=${subject}&body=${body}`;
+
+    submitBtn.textContent = '✓ Opening your email app…';
+    submitBtn.style.background = 'var(--teal)';
+    setTimeout(() => {
+      submitBtn.textContent = 'Send Message';
+      submitBtn.style.background = '';
+      contactForm.reset();
+    }, 3000);
+  });
+}
+
+/* ─── 13. RESUME DOWNLOAD FALLBACK ───────────────────────────── */
+const resumeBtn  = document.getElementById('resumeDownloadBtn');
+const resumeNote = document.getElementById('resumeNote');
+if (resumeBtn && resumeNote) {
+  resumeBtn.addEventListener('click', async e => {
+    try {
+      const res = await fetch('Jason_Albano_Resume.pdf', { method: 'HEAD' });
+      if (!res.ok) { e.preventDefault(); resumeNote.style.display = 'block'; }
+    } catch { e.preventDefault(); resumeNote.style.display = 'block'; }
+  });
+}
+
+/* ─── 14. PD SCROLL DRAG ─────────────────────────────────────── */
+const pdWrap = document.querySelector('.pd-scroll-wrap');
+if (pdWrap) {
+  let dragging = false, sx, sl;
+  pdWrap.addEventListener('mousedown', e => { dragging=true; sx=e.pageX-pdWrap.offsetLeft; sl=pdWrap.scrollLeft; pdWrap.style.cursor='grabbing'; });
+  pdWrap.addEventListener('mouseleave', () => { dragging=false; pdWrap.style.cursor=''; });
+  pdWrap.addEventListener('mouseup',    () => { dragging=false; pdWrap.style.cursor=''; });
+  pdWrap.addEventListener('mousemove',  e => { if (!dragging) return; e.preventDefault(); pdWrap.scrollLeft=sl-(e.pageX-pdWrap.offsetLeft-sx)*1.5; });
+}
+
+/* ─── 15. TOOL TOOLTIPS ──────────────────────────────────────── */
+const tip = document.createElement('div');
+tip.style.cssText = 'position:fixed;background:rgba(6,12,24,.96);border:1px solid rgba(0,212,255,.2);color:#E8EDF5;padding:4px 10px;border-radius:6px;font-family:var(--font-mono);font-size:11px;pointer-events:none;z-index:9000;opacity:0;transition:opacity .15s;white-space:nowrap;backdrop-filter:blur(8px)';
+tip.setAttribute('role', 'tooltip');
+document.body.appendChild(tip);
+
+document.querySelectorAll('.tool-item[data-tip]').forEach(el => {
+  el.addEventListener('mouseenter',  () => { tip.textContent = el.dataset.tip; tip.style.opacity = '1'; });
+  el.addEventListener('mousemove',   e  => { tip.style.left = `${e.clientX + 14}px`; tip.style.top = `${e.clientY - 28}px`; });
+  el.addEventListener('mouseleave',  () => { tip.style.opacity = '0'; });
+});
+
+/* ─── Console signature ──────────────────────────────────────── */
+console.log('%c Jason L. Albano','color:#00D4FF;font-family:monospace;font-size:14px;font-weight:700');
+console.log('%c Senior AI-Enabled Healthcare Data Analyst · Nashville, TN','color:#7A8BA8;font-family:monospace;font-size:11px');
+console.log('%c https://github.com/Albano-Portfolio','color:#00B8A0;font-family:monospace;font-size:10px');
+
+}); // end DOMContentLoaded
+
+  </script>
+</body>
+</html>
